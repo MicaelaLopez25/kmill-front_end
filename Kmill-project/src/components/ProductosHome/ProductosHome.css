@@ -1,0 +1,30 @@
+.productos-home {
+  text-align: center;
+  padding: 50px;
+}
+
+.productos-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.producto {
+  text-align: center;
+  width: 300px;
+}
+
+.producto-imagen {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.titulo {
+  font: 55px "Herr Von Muellerhoff", cursive;
+  color: #a57d5c;
+}
+
+h3 {
+  color: #ffffff;
+}
