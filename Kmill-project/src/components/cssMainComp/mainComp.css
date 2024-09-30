@@ -1,0 +1,58 @@
+.contenido {
+  display: flex; /* Usar flexbox para alinear los elementos */
+  align-items: center; /* Alinear verticalmente al centro */
+}
+
+.imagen {
+  width: 500px; /* Ajusta el tamaño de la imagen según sea necesario */
+  margin-left: 120px; /* Espacio entre la imagen y el texto */
+  border-radius: 32px;
+  box-shadow: -8px -1px 1px #3f3d3d, 4px 9px 2px rgba(0, 0, 0, 0.5),
+    5px 4px 9px rgba(0, 0, 0, 0.4);
+}
+
+.texto {
+  text-align: left; /* Alinear el texto a la izquierda */
+  margin-left: 90px;
+  color: #1a1a1a;
+}
+.titulo {
+  font-size: 5rem;
+  margin-bottom: 4rem;
+  font-family: "Playfair Display", serif;
+  text-shadow: -1px -1px 1px #ffffff, 0px 4px 1px rgba(0, 0, 0, 0.5),
+    0px 0px 7px rgba(0, 0, 0, 0.4);
+}
+.separador {
+  margin: 61px;
+}
+.centrar {
+  display: flex;
+  justify-content: center;
+}
+.letN {
+  font-family: "Herr Von Muellerhoff", cursive;
+  color: #a57d5c;
+  font-size: 55px;
+  display: block;
+  line-height: 63px;
+  margin-bottom: -18px;
+  margin-left: 186px;
+}
+.boton.outline {
+  background-color: transparent;
+  color: #5d5ea6;
+}
+.boton {
+  border-radius: 100px;
+  border: 2px solid #5d5ea6;
+  background-color: #5d5ea6;
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 25px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
