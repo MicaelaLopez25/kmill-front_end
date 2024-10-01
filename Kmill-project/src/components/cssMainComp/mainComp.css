@@ -13,12 +13,12 @@
 
 .texto {
   text-align: left; /* Alinear el texto a la izquierda */
-  margin-left: 90px;
+  margin-left: 52px;
   color: #1a1a1a;
 }
 .titulo {
   font-size: 5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   font-family: "Playfair Display", serif;
   text-shadow: -1px -1px 1px #ffffff, 0px 4px 1px rgba(0, 0, 0, 0.5),
     0px 0px 7px rgba(0, 0, 0, 0.4);
@@ -36,7 +36,7 @@
   font-size: 55px;
   display: block;
   line-height: 63px;
-  margin-bottom: -18px;
+  margin-bottom: -85px;
   margin-left: 186px;
 }
 .boton.outline {

@@ -14,7 +14,9 @@ export function MainComponets() {
 
   return (
     <div className="contenido">
-      <div data-aos="fade-right">
+      <div  data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
         <img className="imagen" src="/galletas.jpg" alt="Galletas" />
       </div>
       <div className="texto">
