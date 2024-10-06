@@ -1,5 +1,6 @@
 import { MainComponets } from "./components/MainComponents";
 import { Post } from "./components/grilla";
+import Footer from "./components/FooterYCss/Footer";
 
 const posts = [
   {
@@ -27,7 +28,7 @@ function App() {
   return (
     <div>
       <MainComponets />
-
+      
       <ul className="grilla-padre">
        {posts.map((elemento, index) => (
          <Post
@@ -39,8 +40,9 @@ function App() {
          />
        ))}
      </ul>
-
+     <Footer/>
     </div>
+
   );
 }
 

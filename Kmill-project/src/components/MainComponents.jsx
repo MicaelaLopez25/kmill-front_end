@@ -20,7 +20,7 @@ export function MainComponets() {
         <img className="imagen" src="/galletas.jpg" alt="Galletas" />
       </div>
       <div className="texto">
-        <h1 className="centrar letN">desde 2024</h1>
+        <h1 className="centrar letN">Desde 2024</h1>
         <h1 className="centrar titulo">Tienda Kmill</h1>
         <p>{parrafo}</p>
         <div data-aos="fade-up">
