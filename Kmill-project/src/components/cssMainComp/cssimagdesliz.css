@@ -1,0 +1,44 @@
+.imagendes {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  width: 100vw; 
+  height: 100vh; 
+  overflow: hidden; 
+  background-color: #000000;
+  position: relative; 
+}
+
+.imagendes img {
+  width: 100%;
+  object-fit: cover; 
+}
+
+.upo {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); 
+  pointer-events: none; 
+}
+
+.titulofoto {
+  position: relative;
+  width: 100%; /* Asegúrate de que ocupe el 100% del contenedor */
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.hola {
+  position: absolute; /* Posiciona el título sobre la imagen */
+  bottom: 20px; /* Ajusta la posición vertical */
+  left: 50%;
+  
+  transform: translateX(-70%);
+  color: white; 
+  font-size: 50px; 
+  z-index: 2; /* Asegúrate de que esté encima de otros elementos */
+}
