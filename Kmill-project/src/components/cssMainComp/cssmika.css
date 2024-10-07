@@ -43,31 +43,75 @@
     width: 100px;
     height: auto;
 }
+    */
 .alturaTarjeta {
-    height: 390px;
-  } */
+  height: 200px;
+}
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
+  grid-auto-rows: auto;
+  gap: 20px;
+}
+.tarjetita {
+  width: 250px;
+  height: 200px;
+  text-align: center;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
+}
+@media (max-width: 767.98px) {
+  .bordes {
+    margin-bottom: 20px;
+  }
+}
+.bordes {
+  border-radius: 30px;
+  box-shadow: 0 11px 38px -15px rgba(0, 0, 0, 0.5);
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
 
-  .grilla {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-auto-rows: auto;
-    gap: 25px;
-  }
-  .tarjetita {
-    background-color: rgb(3, 17, 48);
-    border: 2px solid rgb(0, 7, 22);
-    border-radius: 30px;
-  }
-  .alturaTarjeta {
-    height: 390px;
-  }
-  .tarjetitaNombre {
-    background-color: rgb(255, 255, 255);
-    border: 3px;
-    border-radius: 20px;
-    width: 100%;
-  }
-  .fotoTamaño {
-    width: 150px;
-    height: auto;
-  }
+.card:hover {
+  border: 1px solid rgb(255, 255, 255);
+  transform: scale(1.05);
+}
+
+.card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
+}
+
+.alturaTarjeta {
+  height: 390px;
+}
+.tarjetitaNombre {
+  background-color: rgb(255, 255, 255);
+  border: 3px;
+  border-radius: 20px;
+  width: 100%;
+}
+.fotoTamaño {
+  width: 300px;
+  height: auto;
+}
+/* grilla */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: auto;
+  gap: 15px;
+}
+
+.fuente {
+  text-align: center;
+  font-family: monospace;
+  color: rgb(0, 0, 0);
+}
+
+.h3 {
+  font-family: "Playfair Display", serif;
+  color: black;
+}
