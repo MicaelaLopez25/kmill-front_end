@@ -1,31 +1,27 @@
+import "./cssMainComp/header.css";
 import React from "react";
 const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <img src="ruta-a-tu-logo.png" alt="Logo" />
+        <img src="cookieLOGO.png" alt="" />
       </div>
-      <nav className="nav">
+      <nav className="nav ">
         <ul>
           <li>
-            <a href="#home">Inicio</a>
+            <a href="Inicio">Inicio</a>
           </li>
           <li>
-            <a href="+">Productos</a>
+            <a href="Productos">Productos</a>
           </li>
           <li>
-            <a href="#about">Nosotros</a>
+            <a href="Nosotros">Nosotros</a>
           </li>
           <li>
-            <a href="#contact">Contacto</a>
+            <a href="Contacto">Contacto</a>
           </li>
         </ul>
       </nav>
-      <div className="cart">
-        <a href="#cart">
-          <img src="ruta-a-icono-carrito.png" alt="" />
-        </a>
-      </div>
     </header>
   );
 };
