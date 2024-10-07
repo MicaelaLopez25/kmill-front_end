@@ -1,6 +1,7 @@
 import { MainComponets } from "./components/MainComponents";
 import { Post } from "./components/grilla";
 import Footer from "./components/FooterYCss/Footer";
+import { Link, Route, Routes } from "react-router-dom";
 
 const posts = [
   {
@@ -21,28 +22,29 @@ const posts = [
     link: "https://imgs.search.brave.com/1FuzWHjMz6exTyEllwix9wbdH5IpxKT3FoA0yvNslNY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXM3Lm1lbWVkcm9p/ZC5jb20vaW1hZ2Vz/L1VQTE9BREVENTU3/LzY2NjkwNDBlZDFm/NjEuanBlZw",
     parrafo: "Gato coca",
   },
- ];
+];
 
- 
 function App() {
   return (
     <div>
       <MainComponets />
-      
-      <ul className="grilla-padre">
-       {posts.map((elemento, index) => (
-         <Post
-           description={elemento.description}
-           link={elemento.link}
-           parrafo={elemento.parrafo}
-           titulo={elemento.titulo}
-           key={index}
-         />
-       ))}
-     </ul>
-     <Footer/>
-    </div>
 
+      <ul className="grilla-padre">
+        {posts.map((elemento, index) => (
+          <div key={index}>
+            <Post
+              description={elemento.description}
+              link={elemento.link}
+              parrafo={elemento.parrafo}
+              titulo={elemento.titulo}
+            />
+            <Link to={`/cookie/${elemento.titulo}`}>{elemento.titulo} </Link>
+          </div>
+        ))}
+      </ul>
+
+      <Footer />
+    </div>
   );
 }
 
