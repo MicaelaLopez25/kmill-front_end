@@ -18,6 +18,7 @@ const router = createBrowserRouter([
     path: "/cookie",
     element: <CookieDetail />,
   },
+  { path: "/product/:productDetail", element: <CookieDetail /> },
 ]);
 
 createRoot(document.getElementById("root")).render(

@@ -45,7 +45,7 @@ const Footer = () => {
                 data-aos-delay="500"
               >
                 <a
-                  href="https://www.instagram.com"
+                  href="https://msng.link/o?cookieskmill=ig"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -59,7 +59,7 @@ const Footer = () => {
                 data-aos-delay="750"
               >
                 <a
-                  href="https://www.twitter.com"
+                  href="https://msng.link/o?valeentznn=tw"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -73,7 +73,7 @@ const Footer = () => {
                 data-aos-delay="900"
               >
                 <a
-                  href="https://www.gmail.com"
+                  href="https://www.gabrielamayta2109@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
