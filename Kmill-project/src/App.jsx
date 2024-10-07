@@ -1,8 +1,26 @@
 import { MainComponets } from "./components/MainComponents";
-import { Post } from "./components/grilla";
 import Footer from "./components/FooterYCss/Footer";
+<<<<<<< HEAD
+import Cookieiteams from "./components/Cookieitems";
+
+function App() {
+  return (
+    <div>
+      <Cookieiteams />
+=======
+<<<<<<< HEAD
+import ImageCarousel from "./components/imagdesliz";
+=======
+<<<<<<< HEAD
+import Header from "./components/Header";
+=======
 import { Link, Route, Routes } from "react-router-dom";
+<<<<<<< HEAD
 import ProductosHome from "./components/ProductosHome/ProductosHome";
+=======
+>>>>>>> 717bdf4eaa95883ba6a7a300013d83dfc4f1cd15
+>>>>>>> b6878afa73085f62c5a56aa6946ee773cd5bb003
+>>>>>>> b0d66bc4049d08926bc92484d432b4f976b9fbc2
 
 const posts = [
   {
@@ -28,11 +46,27 @@ const posts = [
 function App() {
   return (
     <div>
+<<<<<<< HEAD
+      <ImageCarousel/>
+=======
+      <Header />
+>>>>>>> b6878afa73085f62c5a56aa6946ee773cd5bb003
       <MainComponets />
       <ProductosHome />
 
       <ul className="grilla-padre">
         {posts.map((elemento, index) => (
+<<<<<<< HEAD
+          <Post
+            description={elemento.description}
+            link={elemento.link}
+            parrafo={elemento.parrafo}
+            titulo={elemento.titulo}
+            key={index}
+          />
+        ))}
+      </ul>
+=======
           <div key={index}>
             <Post
               description={elemento.description}
@@ -45,7 +79,9 @@ function App() {
         ))}
       </ul>
 
+>>>>>>> 717bdf4eaa95883ba6a7a300013d83dfc4f1cd15
       <Footer />
+>>>>>>> 0f2731d808969001ecbef6178b5c3f2bb26a996b
     </div>
   );
 }
