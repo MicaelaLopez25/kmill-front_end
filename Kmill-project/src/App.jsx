@@ -1,6 +1,7 @@
 import { MainComponets } from "./components/MainComponents";
 import { Post } from "./components/grilla";
 import Footer from "./components/FooterYCss/Footer";
+import ImageCarousel from "./components/imagdesliz";
 
 const posts = [
   {
@@ -27,6 +28,7 @@ const posts = [
 function App() {
   return (
     <div>
+      <ImageCarousel/>
       <MainComponets />
       
       <ul className="grilla-padre">
