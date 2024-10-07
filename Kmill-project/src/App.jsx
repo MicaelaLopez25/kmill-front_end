@@ -1,7 +1,11 @@
 import { MainComponets } from "./components/MainComponents";
 import { Post } from "./components/grilla";
 import Footer from "./components/FooterYCss/Footer";
+<<<<<<< HEAD
 import Header from "./components/Header";
+=======
+import { Link, Route, Routes } from "react-router-dom";
+>>>>>>> 717bdf4eaa95883ba6a7a300013d83dfc4f1cd15
 
 const posts = [
   {
@@ -32,6 +36,7 @@ function App() {
 
       <ul className="grilla-padre">
         {posts.map((elemento, index) => (
+<<<<<<< HEAD
           <Post
             description={elemento.description}
             link={elemento.link}
@@ -41,6 +46,20 @@ function App() {
           />
         ))}
       </ul>
+=======
+          <div key={index}>
+            <Post
+              description={elemento.description}
+              link={elemento.link}
+              parrafo={elemento.parrafo}
+              titulo={elemento.titulo}
+            />
+            <Link to={`/cookie/${elemento.titulo}`}>{elemento.titulo} </Link>
+          </div>
+        ))}
+      </ul>
+
+>>>>>>> 717bdf4eaa95883ba6a7a300013d83dfc4f1cd15
       <Footer />
     </div>
   );
