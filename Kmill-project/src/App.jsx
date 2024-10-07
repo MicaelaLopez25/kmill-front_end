@@ -2,6 +2,7 @@ import { MainComponets } from "./components/MainComponents";
 import { Post } from "./components/grilla";
 import Footer from "./components/FooterYCss/Footer";
 import { Link, Route, Routes } from "react-router-dom";
+import ProductosHome from "./components/ProductosHome/ProductosHome";
 
 const posts = [
   {
@@ -28,6 +29,7 @@ function App() {
   return (
     <div>
       <MainComponets />
+      <ProductosHome />
 
       <ul className="grilla-padre">
         {posts.map((elemento, index) => (

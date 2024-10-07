@@ -15,7 +15,11 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/cookie",
+    path: "/productos",
+    element: <CookieDetail />,
+  },
+  {
+    path: "/productos/:producto",
     element: <CookieDetail />,
   },
 ]);
