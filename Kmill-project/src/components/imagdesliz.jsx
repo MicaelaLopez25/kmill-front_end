@@ -5,9 +5,9 @@ import "aos/dist/aos.css"; // Importar CSS de AOS
 
 const ImageCarousel = () => {
   const images = [
-    { url: '/cookie11.jpg', title: 'Galletas deliciosas Alfajores y cookies artesanales' },
-    { url: '/cookie22.JPG', title: 'Galletas deliciosas Alfajores y cookies artesanales' },
-    { url: '/cookie33.JPG', title: 'Galletas deliciosas Alfajores y cookies artesanales' }
+    { url: '/cookie11.jpg', title: 'Galletas deliciosas Alfajores y Cookies artesanales' },
+    { url: '/cookie22.JPG', title: 'Galletas deliciosas Alfajores y Cookies artesanales' },
+    { url: '/cookie33.JPG', title: 'Galletas deliciosas Alfajores y Cookies artesanales' }
   ];
 
   const animations = [
@@ -28,18 +28,21 @@ const ImageCarousel = () => {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  useEffect(() => {
-    AOS.refresh(); // Actualiza AOS al cambiar la imagen
-  }, [currentImage]);
-
   const ImageWithTitle = ({ title, imageUrl }) => {
     return (
       <div className="titulofoto">
         <img src={imageUrl} alt={title} className="imagen" />
-        <h2 className="hola">{title}</h2>
+        <div >  
+        <h2 className="hola">{title}</h2> {/* El título aquí */}
+        </div>
       </div>
     );
   };
+  useEffect(() => {
+    AOS.refresh(); // Actualiza AOS al cambiar la imagen
+  }, [currentImage]);
+
+
 
   return (
     <div className="imagendes">

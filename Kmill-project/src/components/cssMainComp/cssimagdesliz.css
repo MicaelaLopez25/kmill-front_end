@@ -7,10 +7,12 @@
   overflow: hidden; 
   background-color: #000000;
   position: relative; 
+  margin-bottom: 30px;
 }
 
 .imagendes img {
   width: 100%;
+  height: 100%; /* Asegúrate de que la imagen cubra todo el contenedor */
   object-fit: cover; 
 }
 
@@ -25,20 +27,22 @@
 }
 
 .titulofoto {
-  position: relative;
-  width: 100%; /* Asegúrate de que ocupe el 100% del contenedor */
+  width: 100%; 
   display: flex; 
   justify-content: center; 
-  align-items: center; 
+  align-items: flex-end; /* Cambiado a flex-end para que el texto esté al fondo */
+
+
 }
 
 .hola {
-  position: absolute; /* Posiciona el título sobre la imagen */
-  bottom: 20px; /* Ajusta la posición vertical */
+  position: absolute; 
+  bottom: 180px; 
   left: 50%;
-  
-  transform: translateX(-70%);
+  transform: translateX(-50%); /* Mantener centrado */
   color: white; 
-  font-size: 50px; 
+  font-size: 56px; 
   z-index: 2; /* Asegúrate de que esté encima de otros elementos */
+  text-align: center; /* Centra el texto si hay múltiples líneas */
+  font-family: "Playfair Display", serif;
 }
