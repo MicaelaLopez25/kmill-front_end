@@ -10,7 +10,8 @@
 
 .producto {
   text-align: center;
-  width: 300px;
+  position: relative;
+  width: 200px;
 }
 
 .producto-imagen {
@@ -18,13 +19,33 @@
   height: 200px;
   object-fit: cover;
   border-radius: 5%;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+}
+
+.producto-cover-imagen {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 5%;
+  position: absolute;
+  bottom: 80px;
+  left: 150px;
+  z-index: 10;
+}
+
+.producto-title {
+  position: absolute;
+  z-index: 100;
+  left: 80%;
+  color: black;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
 }
 
 .tituloprod {
   font: 55px "Herr Von Muellerhoff", cursive;
   color: #a57d5c;
-}
-
-h3 {
-  color: #ffffff;
 }
