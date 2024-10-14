@@ -1,12 +1,10 @@
-import "./cssMainComp/header.css";
-import React from "react";
 const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <img src="cookieLOGO.png" alt="" />
+        <img src="cookieLOGO.png" alt="Logo" />
       </div>
-      <nav className="nav ">
+      <nav className="nav">
         <ul>
           <li>
             <a href="Inicio">Inicio</a>
@@ -25,5 +23,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;
