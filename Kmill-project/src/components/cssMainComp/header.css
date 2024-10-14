@@ -46,3 +46,58 @@
     margin-left: 10px; /* Menos espacio entre los elementos */
   }
 }
+
+.header {
+  position: absolute; /* Mantiene el header en la parte superior */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* Asegúrate de que esté encima de otros elementos */
+  background-color: transparent; /* Fondo completamente transparente */
+  padding: 10px 20px; /* Espaciado interno */
+  display: flex; /* Usar flexbox para alinear elementos */
+  justify-content: center; /* Centra los elementos en el eje horizontal */
+  align-items: center; /* Alinea los elementos verticalmente */
+}
+
+.logo {
+  display: flex; /* Usamos flexbox para alinear la imagen y el texto */
+  align-items: center; /* Alinea verticalmente la imagen y el texto */
+}
+
+.cookie-image {
+  max-height: 45px; /* Tamaño de la imagen */
+  margin-right: 10px; /* Espacio entre la imagen y el texto */
+  width: auto;
+}
+
+.nav ul {
+  display: flex; /* Usar flexbox para la navegación */
+  list-style: none; /* Elimina el estilo de lista */
+  padding: 0; /* Elimina el padding */
+}
+
+.nav ul li {
+  margin-left: 20px; /* Espacio entre elementos de la lista */
+}
+
+.nav ul li a {
+  text-decoration: none; /* Sin subrayado */
+  color: var(--primary-color); /* Color definido en tus variables */
+  font-weight: bold; /* Negrita */
+  transition: color var(--transition-speed); /* Transición suave */
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 5px 10px; /* Espaciado más pequeño en pantallas pequeñas */
+  }
+
+  .logo img {
+    max-height: 30px; /* Logo más pequeño en pantallas pequeñas */
+  }
+
+  .nav ul li {
+    margin-left: 10px; /* Menos espacio entre los elementos */
+  }
+}
