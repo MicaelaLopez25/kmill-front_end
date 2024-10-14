@@ -1,3 +1,6 @@
+import React from "react";
+import "./cssMainComp/header.css"; // Asegúrate de que la ruta sea correcta
+
 const Header = () => {
   return (
     <header className="header">
@@ -23,3 +26,5 @@ const Header = () => {
     </header>
   );
 };
+
+export default Header; // Exportar como default

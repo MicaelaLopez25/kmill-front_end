@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../components/cssMainComp/cssimagdesliz.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Header from "./Header";
+import Header from "./Header"; // Importar como default
 
 const ImageCarousel = () => {
   const images = [
