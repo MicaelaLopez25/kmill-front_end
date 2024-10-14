@@ -10,7 +10,14 @@ const ImageCarousel = () => {
       url: "/cookie11.jpg",
       title: "Galletas deliciosas Alfajores y Cookies artesanales",
     },
-    // Puedes agregar más imágenes aquí
+    {
+      url: "/cookie22.JPG",
+      title: "Galletas deliciosas Alfajores y Cookies artesanales",
+    },
+    {
+      url: "/cookie33.JPG",
+      title: "Galletas deliciosas Alfajores y Cookies artesanales",
+    },
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
