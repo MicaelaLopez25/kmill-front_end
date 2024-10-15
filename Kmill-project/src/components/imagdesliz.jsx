@@ -49,7 +49,6 @@ const ImageCarousel = () => {
 
   return (
     <div className="imagendes">
-      <Header /> {/* Header fuera de ImageWithTitle */}
       <ImageWithTitle
         title={images[currentImage].title}
         imageUrl={images[currentImage].url}
