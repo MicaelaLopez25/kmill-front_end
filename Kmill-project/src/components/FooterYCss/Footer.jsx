@@ -11,7 +11,7 @@ AOS.init({
 
 const Footer = () => {
   return (
-    <div className="site-footer  site-footer::before">
+    <div className="site-footer  site-footer::before" id="footer">
       <footer>
         <div className="footerContentStyle">
           <p>&copy; 2024 Galletas Deliciosas. Todos los derechos reservados.</p>

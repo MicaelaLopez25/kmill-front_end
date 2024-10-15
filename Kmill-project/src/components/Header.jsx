@@ -1,6 +1,6 @@
 import React from "react";
 import "./cssMainComp/header.css"; // Asegúrate de que la ruta sea correcta
-
+import "./FooterYCss/Footer"
 const Header = () => {
   return (
     <header className="header">
@@ -19,7 +19,7 @@ const Header = () => {
             <a href="Nosotros">Nosotros</a>
           </li>
           <li>
-            <a href="Contacto">Contacto</a>
+            <a href="#footer">Contacto</a>
           </li>
         </ul>
       </nav>
