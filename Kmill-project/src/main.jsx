@@ -9,6 +9,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import CookieDetail from "./components/CookieDetail.jsx";
+import Cookieiteams from "./components/Cookieitems.jsx";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/productos",
-    element: <CookieDetail />,
+    element: <Cookieiteams />,
   },
   {
     path: "/productos/:producto",
