@@ -5,15 +5,15 @@ const posts = [
     titulo: "Cookie Oreo ",
     description: "Joylne Cuyoj",
     link: "/oreocookie.jpg",
-    subtitulo: "Variedades",
-    parrafo: "Gato coca",
+    subtitulo: "",
+    parrafo: "Harina",
   },
   {
     titulo: "Cookie Rocklets",
     description: "Joylne Cuyoj",
     link: "/cookie1.jpg",
-    subtitulo: "Variedades",
-    parrafo: "Cookie Rocklets",
+    subtitulo: "",
+    parrafo: " sfkks foafjs kfoaf",
   },
   {
     titulo: "Cookie con mani",
@@ -44,7 +44,7 @@ const posts = [
 const Cookieitems = () => {
   return (
     <>
-      <h1 className="fuente-titulo"> Cookie </h1>
+      <h1 className="fuente-titulo"> Cookies </h1>
       <ul className="container">
         {posts.map((elemento, index) => (
           <Post

@@ -99,8 +99,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-auto-rows: auto;
-  gap: 10%;
-  padding-left: 20%;
+  gap: 30%;
+  padding-left: 13%;
 }
 
 .fuente-titulo {
@@ -112,13 +112,51 @@
 
 .h3 {
   font-family: "Playfair Display", serif;
-  color: black;
+  color: #474747;
+  font-size: 25px;
+  font: weight 10px;
+  text-align: center;
+  line-height: 1.5;
 }
 .h4 {
-  color: #000000;
+  color:#DE99A6;
   text-transform: uppercase;
   font-size: 15px;
   font-weight: 400;
   font-family: "Lato", sans-serif;
   padding-top: 20px;
+  text-align: left;
+  font-size: 17px;
+  line-height: 0.1;
+}
+
+.parrafo {
+  padding: 4px 0;
+  font-size: 15px;
+  line-height: 19px;
+  color: black;
+  text-align: left;
+}
+
+/* tile rosa */
+
+.custom-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 20px; /* Ajusta este valor para acercar o alejar el texto del ícono */
+  margin-bottom: 10px;
+}
+
+.custom-list li::before {
+  content: "✔"; /* Símbolo de la tilde */
+  color: #DE99A6; /* Color dorado */
+  font-size: 18px; /* Tamaño ajustado del ícono */
+  position: absolute;
+  left: 0; /* Ajusta la posición horizontal del ícono */
+  top: 0;
+  line-height: 1,9; /* Asegura que el ícono esté alineado verticalmente con el texto */
 }
