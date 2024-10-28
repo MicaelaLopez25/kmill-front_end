@@ -1,6 +1,8 @@
 import React from "react";
 import "./cssMainComp/header.css"; // Asegúrate de que la ruta sea correcta
-import "./FooterYCss/Footer"
+import Nosotros from "./Nosotros";
+import "./cssMainComp/nosotros.css";
+
 const Header = () => {
   return (
     <header className="header">
