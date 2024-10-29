@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import CookieDetail from "./components/CookieDetail.jsx";
 import Cookieiteams from "./components/Cookieitems.jsx";
+import Nosotros from "./components/Nosotros.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     element: <CookieDetail />,
   },
   { path: "/product/:productDetail", element: <CookieDetail /> },
+  {
+    path: "/nosotros",
+    element: <Nosotros />,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(

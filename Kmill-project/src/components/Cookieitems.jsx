@@ -4,7 +4,7 @@ import { Post } from "./grilla";
 const posts = [
   {
     id: 1,
-    titulo: "Cookie Oreo",
+    titulo: 1,
     description: "Joylne Cuyoj",
     link: "/oreocookie.jpg",
     subtitulo: "",
@@ -12,7 +12,7 @@ const posts = [
   },
   {
     id: 2,
-    titulo: "Cookie Rocklets",
+    titulo: "Cookie Clásica",
     description: "Joylne Cuyoj",
     link: "/cookie1.jpg",
     subtitulo: "",
@@ -23,6 +23,7 @@ const posts = [
     titulo: "Cookie con maní",
     description: "Joylne Cuyoj",
     link: "/cokie2.jpg",
+    subtitulo: "",
     parrafo: "",
   },
   {
@@ -30,49 +31,58 @@ const posts = [
     titulo: "Cookie con chocolina",
     description: "Joylne Cuyoj",
     link: "/cookienormal.jpg",
-    parrafo: "",
-  },
-  {
-    id: 9,
-    titulo: "Publicidad en contra de Pepsi",
-    description: "Joylne Cuyoj",
-    link: "https://media.istockphoto.com/id/157511634/es/foto/caseras-con-pedacitos-de-chocolate-sobre-blanco-a%C3%A9reos-xxxl.jpg?s=612x612&w=0&k=20&c=er2YzMqo_KX15V7w37_E383WMPOqFbfxzCYtbx8Tubg=",
+    subtitulo: "",
     parrafo: "",
   },
 ];
 
 const Cookieitems = () => {
   const [ingredientes, setIngredientes] = useState({});
+  const [productos, setProductos] = useState({});
 
   useEffect(() => {
-    const fetchIngredientes = async () => {
+    const fetchData = async () => {
       const nuevosIngredientes = {};
+      const nuevosProductos = {};
 
       for (const post of posts) {
         try {
-          const response = await fetch(
+          // Obtener ingredientes
+          const ingredientesResponse = await fetch(
             `http://127.0.0.1:5000/ingrediente_producto/${post.id}`
           );
-          if (response.ok) {
-            const data = await response.json();
+          if (ingredientesResponse.ok) {
+            const data = await ingredientesResponse.json();
             nuevosIngredientes[post.id] = data; // Almacena los ingredientes
           } else {
-            console.error("Error en la respuesta de la API");
+            console.error("Error en la respuesta de la API de ingredientes");
+          }
+
+          // Obtener productos
+          const productosResponse = await fetch(
+            `http://127.0.0.1:5000/producto/${post.id}`
+          );
+          if (productosResponse.ok) {
+            const data = await productosResponse.json();
+            nuevosProductos[post.id] = data; // Almacena los productos
+          } else {
+            console.error("Error en la respuesta de la API de productos");
           }
         } catch (error) {
-          console.error("Error al obtener ingredientes:", error);
+          console.error("Error al obtener datos:", error);
         }
       }
 
       setIngredientes(nuevosIngredientes); // Almacena todos los ingredientes
+      setProductos(nuevosProductos); // Almacena todos los productos
     };
 
-    fetchIngredientes();
+    fetchData();
   }, []);
 
   return (
     <>
-      <h1 className="fuente-titulo"> Cookies </h1>
+      <h1 className="fuente-titulo">Productos</h1>
       <ul className="container">
         {posts.map((elemento) => (
           <Post

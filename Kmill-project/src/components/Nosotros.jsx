@@ -2,17 +2,17 @@
 import React from "react";
 import "./cssMainComp/nosotros.css"; // Asegúrate de que esta ruta sea correcta para el archivo CSS
 
-const Nosotros = () => {
+function Nosotros() {
   return (
     <section className="nosotros-section">
       <h2>Nosotros</h2>
       <p>
-        En <strong>[Nombre del Negocio de Cookies]</strong>, nos apasiona llevar
-        sonrisas a través de nuestras galletas. Lo que comenzó como un pequeño
-        proyecto en la escuela, vendiendo cookies caseras, se ha convertido en
-        una aventura llena de sabor y calidad. Desde el primer día, nuestra
-        misión ha sido clara: ofrecer galletas frescas, deliciosas y hechas con
-        los mejores ingredientes, ideales para cualquier momento.
+        En <strong>Kmill</strong>, nos apasiona llevar sonrisas a través de
+        nuestras galletas. Lo que comenzó como un pequeño proyecto en la
+        escuela, vendiendo cookies caseras, se ha convertido en una aventura
+        llena de sabor y calidad. Desde el primer día, nuestra misión ha sido
+        clara: ofrecer galletas frescas, deliciosas y hechas con los mejores
+        ingredientes, ideales para cualquier momento.
       </p>
       <p>
         Nuestra visión es convertirnos en la opción preferida de quienes buscan
@@ -28,6 +28,6 @@ const Nosotros = () => {
       </p>
     </section>
   );
-};
+}
 
 export default Nosotros;
