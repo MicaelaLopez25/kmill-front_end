@@ -54,13 +54,12 @@
   gap: 20px;
 }
 .tarjetita {
-  width: 250px;
-  height: auto; /* Permite que la altura sea automática según el contenido */
+  width: 280px;
+  height: 220px; /* Permite que la altura sea automática según el contenido */
 
   border-radius: 30px;
   background: #e0e0e0;
   box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
-  padding: 20px; /* Añadir padding para más espacio interno */
   display: flex;
   flex-direction: column; /* Colocar elementos en columna */
   align-items: center; /* Centrar horizontalmente */
