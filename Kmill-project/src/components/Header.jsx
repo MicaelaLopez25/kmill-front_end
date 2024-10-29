@@ -2,6 +2,7 @@ import React from "react";
 import "./cssMainComp/header.css"; // Asegúrate de que la ruta sea correcta
 import Nosotros from "./Nosotros";
 import "./cssMainComp/nosotros.css";
+import { Link } from "react-router-dom"; // Importa Link de react-router-dom
 
 const Header = () => {
   return (
@@ -18,7 +19,7 @@ const Header = () => {
             <a href="Productos">Productos</a>
           </li>
           <li>
-            <a href="Nosotros">Nosotros</a>
+            <a href="nosotros">Nosotros</a>
           </li>
           <li>
             <a href="#footer">Contacto</a>
