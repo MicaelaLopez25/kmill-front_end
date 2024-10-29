@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // Importar CSS de AOS
 import { Link } from "react-router-dom"; // Importa Link de react-router-dom
 import Cookieiteams from "./Cookieitems";
+
 AOS.init({
  // Opcional: configuración de AOS
  duration: 3000, // Duración de las animaciones en milisegundos
@@ -27,7 +28,7 @@ export function MainComponets() {
          <h1 className="centrar titulo">Tienda Kmill</h1>
          <p>{parrafo}</p>
          <div data-aos="fade-up">
-           <Link to="/Nosotros" className="boton outline separador">
+           <Link to="/nosotros" className="boton outline separador">
              Conocer más
            </Link>
            <a href="/productos" className="boton">

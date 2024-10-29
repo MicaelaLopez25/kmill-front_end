@@ -2,7 +2,7 @@
 import React from "react";
 import "./cssMainComp/nosotros.css"; // Asegúrate de que esta ruta sea correcta para el archivo CSS
 
-const Nosotros = () => {
+function Nosotros()  {
   return (
     <section className="nosotros-section">
       <h2>Nosotros</h2>
