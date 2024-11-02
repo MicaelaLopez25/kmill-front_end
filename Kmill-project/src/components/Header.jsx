@@ -1,7 +1,7 @@
 import React from "react";
 import "./cssMainComp/header.css";
 import { Link } from "react-router-dom";
-
+import "./FooterYCss/Footer.jsx";
 const Header = () => {
   return (
     <header className="header">
@@ -21,7 +21,9 @@ const Header = () => {
               <Link to="nosotros">Nosotros</Link>
             </li>
             <li>
-              <Link to="#footer">Contacto</Link>
+            <Link to="#" onClick={() => document.getElementById('footer').scrollIntoView({ behavior: 'smooth' })}>
+              Contacto
+            </Link>
             </li>
           </ul>
         </div>
@@ -29,7 +31,7 @@ const Header = () => {
       <div className="login">
         <ul>
           <li>
-            <Link to="login">Ingresar</Link>
+            <Link to="Login">Ingresar</Link>
           </li>
         </ul>
       </div>

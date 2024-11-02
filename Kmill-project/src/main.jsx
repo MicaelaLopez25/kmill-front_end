@@ -11,6 +11,9 @@ import {
 import CookieDetail from "./components/CookieDetail.jsx";
 import Cookieiteams from "./components/Cookieitems.jsx";
 import Nosotros from "./components/Nosotros.jsx";
+import Login from "./components/login-register/Login.jsx";
+import Recuperar from "./components/login-register/Recuperar.jsx";
+import Register from "./components/login-register/Register.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +33,19 @@ const router = createBrowserRouter([
     path: "/nosotros",
     element: <Nosotros />,
   },
+  {
+    path: "/Login",
+    element: <Login />,
+  },
+  {
+    path: "/recuperar",
+    element: <Recuperar />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  
 ]);
 
 createRoot(document.getElementById("root")).render(

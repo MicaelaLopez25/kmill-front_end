@@ -101,9 +101,7 @@
     margin-left: 10px; /* Menos espacio entre los elementos */
   }
 }
-html {
-  scroll-behavior: smooth;
-}
+
 
 .nav-link:hover {
   border-bottom: 2px solid #000; /* Cambia el color y el grosor según prefieras */
@@ -135,4 +133,7 @@ html {
   color: var(--primary-color);
   font-weight: bold;
   transition: color var(--transition-speed);
+}
+html {
+  scroll-behavior: smooth;
 }
