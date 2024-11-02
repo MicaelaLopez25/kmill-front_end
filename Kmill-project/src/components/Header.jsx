@@ -1,8 +1,6 @@
 import React from "react";
-import "./cssMainComp/header.css"; // Asegúrate de que la ruta sea correcta
-import Nosotros from "./Nosotros";
-import "./cssMainComp/nosotros.css";
-import { Link } from "react-router-dom"; // Importa Link de react-router-dom
+import "./cssMainComp/header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -11,23 +9,32 @@ const Header = () => {
         <img src="logoCOOKIE.png" alt="Cookie" className="cookie-image" />
       </div>
       <nav className="nav">
+        <div className="nav-left">
+          <ul>
+            <li>
+              <Link to="Inicio">Inicio</Link>
+            </li>
+            <li>
+              <Link to="Productos">Productos</Link>
+            </li>
+            <li>
+              <Link to="nosotros">Nosotros</Link>
+            </li>
+            <li>
+              <Link to="#footer">Contacto</Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div className="login">
         <ul>
           <li>
-            <a href="Inicio">Inicio</a>
-          </li>
-          <li>
-            <a href="Productos">Productos</a>
-          </li>
-          <li>
-            <a href="nosotros">Nosotros</a>
-          </li>
-          <li>
-            <a href="#footer">Contacto</a>
+            <Link to="login">Ingresar</Link>
           </li>
         </ul>
-      </nav>
+      </div>
     </header>
   );
 };
 
-export default Header; // Exportar como default
+export default Header;

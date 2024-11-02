@@ -109,3 +109,30 @@ html {
   border-bottom: 2px solid #000; /* Cambia el color y el grosor según prefieras */
   padding-bottom: 5px; /* Ajusta el espacio entre el texto y la línea */
 }
+
+/*CSS para poner el botn ingresar a la derechaa*/
+.nav {
+  flex: 1; /* Permite que la nav ocupe el espacio disponible */
+  display: flex; /* Flexbox para la navegación */
+  justify-content: center; /* Centra los botones de navegación */
+}
+
+.login {
+  margin-right: 40px; /* Espacio a la izquierda del botón "Ingresar" */
+}
+
+.login ul {
+  list-style: none;
+  padding: 0;
+}
+
+.login ul li {
+  margin-left: -60px; /* Espacio entre los elementos de la lista */
+}
+
+.login ul li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  transition: color var(--transition-speed);
+}
