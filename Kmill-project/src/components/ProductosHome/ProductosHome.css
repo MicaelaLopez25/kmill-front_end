@@ -1,11 +1,14 @@
 .productos-home {
   text-align: center;
   padding: 50px;
+  margin: 10px;
+  display: grid;
 }
 
 .productos-container {
   display: flex;
   justify-content: space-around;
+  margin-top: 15%;
 }
 
 .producto {
@@ -30,8 +33,8 @@
   object-fit: cover;
   border-radius: 5%;
   position: absolute;
-  bottom: 80px;
-  left: 150px;
+  bottom: 75px;
+  left: 160px;
   z-index: 10;
 }
 
@@ -43,9 +46,11 @@
   position: absolute;
   bottom: 0;
   z-index: 10;
+  font-family: "Playfair Display", serif;
 }
 
 .tituloprod {
   font: 55px "Herr Von Muellerhoff", cursive;
   color: #a57d5c;
+  text-align: start;
 }

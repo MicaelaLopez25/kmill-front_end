@@ -7,17 +7,15 @@ import Header from "./components/Header";
 
 import { Link, Route, Routes } from "react-router-dom";
 import ProductosHome from "./components/ProductosHome/ProductosHome";
+import MiniCart from "./components/MiniCart/Order";
 
 function App() {
   return (
     <div>
       <Header />
-
       <ImageCarousel />
-
       <MainComponets />
       <ProductosHome />
-
       <Footer />
     </div>
   );

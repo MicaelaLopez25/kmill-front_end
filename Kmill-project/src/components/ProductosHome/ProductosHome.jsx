@@ -25,29 +25,26 @@ const arr = [
 function ProductosHome() {
   return (
     <section className="productos-home">
-      <h2 className="tituloprod">Nuestros Productos</h2>
+      <div className="tituloprod">
+        <h2>Nuestros Productos</h2>
+      </div>
       <div className="productos-container">
         {arr.map((element, index) => (
           <div className="producto">
             <Link to={element.link}>
-              <a
-                href="#seccionCookies"
-                onClick={() => scrollIntoView("seccionCookies")}
-              >
-                <img
-                  src={element.fotoUrl}
-                  alt="cookies"
-                  className="producto-imagen"
-                />
-                <img
-                  src={element.coverFotoUrl}
-                  alt="alfajores"
-                  className="producto-cover-imagen"
-                />
-                <h3 color="black" className="producto-title">
-                  {element.title}
-                </h3>
-              </a>
+              <img
+                src={element.fotoUrl}
+                alt="cookies"
+                className="producto-imagen"
+              />
+              <img
+                src={element.coverFotoUrl}
+                alt="alfajores"
+                className="producto-cover-imagen"
+              />
+              <h3 color="black" className="producto-title">
+                {element.title}
+              </h3>
             </Link>
           </div>
         ))}
