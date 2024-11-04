@@ -25,20 +25,23 @@ const ImageCarousel = () => {
   useEffect(() => {
     AOS.init();
 
-    const interval = setInterval(() => {
+    /*const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
     }, 3000);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(interval);*/
   }, [images.length]);
 
   const ImageWithTitle = ({ title, imageUrl }) => {
     return (
       <div className="titulofoto">
+          
         <img src={imageUrl} alt={title} className="imagen" />
-        <div>
-          <h2 className="hola">{title}</h2>
+        <div style={{position: "absolute", bottom: "200px", left: "100px"}}>
+
+          <h2 style={{ color: "#fff"}}>{title}</h2>
         </div>
+        
       </div>
     );
   };
