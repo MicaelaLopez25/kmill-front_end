@@ -102,7 +102,6 @@
   }
 }
 
-
 .nav-link:hover {
   border-bottom: 2px solid #000; /* Cambia el color y el grosor según prefieras */
   padding-bottom: 5px; /* Ajusta el espacio entre el texto y la línea */
@@ -114,26 +113,35 @@
   display: flex; /* Flexbox para la navegación */
   justify-content: center; /* Centra los botones de navegación */
 }
-
 .login {
-  margin-right: 40px; /* Espacio a la izquierda del botón "Ingresar" */
+  display: flex; /* Usar flexbox para alinear los botones */
+  align-items: center; /* Centrar verticalmente */
+  margin-right: 30px;
 }
 
 .login ul {
+  display: flex; /* Usar flexbox para alinear los elementos en línea */
   list-style: none;
   padding: 0;
 }
 
 .login ul li {
-  margin-left: -60px; /* Espacio entre los elementos de la lista */
+  margin-left: -2px; /* Espacio entre los botones */
 }
 
-.login ul li a {
+.login-button a,
+.logout-button a {
+  background: none;
+  border: none;
   text-decoration: none;
   color: var(--primary-color);
   font-weight: bold;
   transition: color var(--transition-speed);
+  cursor: pointer;
+  margin-right: 53px;
 }
-html {
-  scroll-behavior: smooth;
+
+.login-button a:hover,
+.logout-button a:hover {
+  color: red; /* Cambia el color al pasar el ratón */
 }
