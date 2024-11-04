@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Post } from "./grilla";
 
+// Vamos a guadar las imagenes en la base de datos,los links,
 const posts = [
   {
     id: 1,
@@ -12,7 +13,7 @@ const posts = [
   },
   {
     id: 2,
-    titulo: "Cookie Clásica",
+    titulo: 1,
     description: "Joylne Cuyoj",
     link: "/cookie1.jpg",
     subtitulo: "",
@@ -20,7 +21,7 @@ const posts = [
   },
   {
     id: 3,
-    titulo: "Cookie con maní",
+    titulo: 1,
     description: "Joylne Cuyoj",
     link: "/cokie2.jpg",
     subtitulo: "",
@@ -34,16 +35,38 @@ const posts = [
     subtitulo: "",
     parrafo: "",
   },
+  {
+    id: 5,
+    titulo: 2,
+    description: "f",
+    link: "cookiechocolina.jpg",
+    subtitulo: "",
+    parrafo: "",
+  },
 ];
 
 const Cookieitems = () => {
   const [ingredientes, setIngredientes] = useState({});
-  const [productos, setProductos] = useState({});
+  const [productos, setProductos] = useState([]);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    console.log("products", products);
+    products.map((item, index) => {
+      console.log(item.Nombre, item.id, item.Descripción);
+    });
+  }, [products]);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:5000/jsonproducto")
+      .then((data) => data.json())
+      .then((data) => setProducts(data));
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
       const nuevosIngredientes = {};
-      const nuevosProductos = {};
+      const nuevosProductos = [];
 
       for (const post of posts) {
         try {
@@ -64,7 +87,7 @@ const Cookieitems = () => {
           );
           if (productosResponse.ok) {
             const data = await productosResponse.json();
-            nuevosProductos[post.id] = data; // Almacena los productos
+            nuevosProductos.push(data); // Agrega el producto al array
           } else {
             console.error("Error en la respuesta de la API de productos");
           }
@@ -74,7 +97,7 @@ const Cookieitems = () => {
       }
 
       setIngredientes(nuevosIngredientes); // Almacena todos los ingredientes
-      setProductos(nuevosProductos); // Almacena todos los productos
+      setProductos(nuevosProductos); // Almacena todos los productos en un array
     };
 
     fetchData();
@@ -84,10 +107,10 @@ const Cookieitems = () => {
     <>
       <h1 className="fuente-titulo">Productos</h1>
       <ul className="container">
-        {posts.map((elemento) => (
+        {posts.map((elemento, index) => (
           <Post
             key={elemento.id}
-            titulo={elemento.titulo}
+            titulo={elemento.titulo || "Producto sin título"}
             description={elemento.description}
             link={elemento.link}
             parrafo={elemento.parrafo}
