@@ -80,7 +80,6 @@ const Login = () => {
         </form>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         <div className="footer-links">
-          <a href="recuperar">Olvidé mi contraseña</a>
           <a href="register">Crear una cuenta</a>
         </div>
       </div>
