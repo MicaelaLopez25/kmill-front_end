@@ -1,98 +1,100 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Fondo de la página */
-  }
-  
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; /* Fondo de la página */
+}
+
 .login-container {
-    display: flex;
-    justify-content: center; /* Centra el contenido */
-    align-items: center; /* Centra verticalmente */
-    height: 100vh; /* Ocupa toda la altura de la pantalla */
-  }
-  
-  .login-card {
-    background: white;
-    padding: 57px;
-    border-radius: 19px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 326px;
-  }
-  
-  h2 {
-    text-align: center; /* Título centrado */
-    margin-bottom: 20px; /* Espacio inferior */
-  }
-  
-  .form-group {
-    margin-bottom: 15px; /* Espacio entre los grupos de formulario */
-  }
-  
-  label {
-    display: block; /* Etiqueta en bloque */
-    margin-bottom: 5px; /* Espacio inferior */
-  }
-  
-  input {
-    width: 100%; /* Ancho completo */
-    padding: 10px; /* Espacio interno */
-    border: 1px solid #ccc; /* Borde gris claro */
-    border-radius: 4px; /* Bordes redondeados */
-  }
-  
-  .btn-login {
-    width: 107%; /* Botón de ancho completo */
-    padding: 10px; /* Espacio interno */
-    background-color: #007bff; /* Color de fondo */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 4px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar */
-    transition: background-color 0.3s; /* Transición suave */
-  }
-  
-  .btn-login:hover {
-    background-color: #0056b3; /* Color al pasar el mouse */
-  }
-  
-  .footer-links {
-    text-align: center; /* Centramos los enlaces */
-    margin-top: 15px; /* Espacio superior */
-  }
-  
-  .footer-links a {
-    color: #007bff; /* Color de los enlaces */
-    text-decoration: none; /* Sin subrayado */
-    margin: 0 13px; /* Espacio entre enlaces */
-  }
-  
-  .footer-links a:hover {
-    text-decoration: underline; /* Subrayado al pasar el mouse */
-  }
-  
+  display: flex;
+  justify-content: center; /* Centra el contenido */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+.login-card {
+  background: white;
+  padding: 57px;
+  border-radius: 19px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 326px;
+}
+
+h2 {
+  text-align: center; /* Título centrado */
+  margin-bottom: 20px; /* Espacio inferior */
+  color: #000000;
+}
+
+.form-group {
+  margin-bottom: 15px; /* Espacio entre los grupos de formulario */
+}
+
+label {
+  display: block; /* Etiqueta en bloque */
+  margin-bottom: 5px; /* Espacio inferior */
+  color: #000000;
+}
+
+input {
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Espacio interno */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+.btn-login {
+  width: 107%; /* Botón de ancho completo */
+  padding: 10px; /* Espacio interno */
+  background-color: #007bff; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.btn-login:hover {
+  background-color: #0056b3; /* Color al pasar el mouse */
+}
+
+.footer-links {
+  text-align: center; /* Centramos los enlaces */
+  margin-top: 15px; /* Espacio superior */
+}
+
+.footer-links a {
+  color: #007bff; /* Color de los enlaces */
+  text-decoration: none; /* Sin subrayado */
+  margin: 0 13px; /* Espacio entre enlaces */
+}
+
+.footer-links a:hover {
+  text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
 .back-button {
-    width: 108%;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.22);
-    color: #000000;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    position: relative; /* Necesario para la línea */
-    padding-right: 306px;
+  width: 108%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.22);
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative; /* Necesario para la línea */
+  padding-right: 306px;
 }
 
 .back-button:hover {
-    background-color: transparent; /* Asegúrate de que no haya fondo al hacer hover */
+  background-color: transparent; /* Asegúrate de que no haya fondo al hacer hover */
 }
 
 .back-button:hover::after {
-    content: "";
-    display: block;
-    width: 28%;
-    height: 1px; /* Grosor de la línea */
-    background-color: #000000; /* Color de la línea */
-    position: absolute;
-    bottom: 5px; /* Distancia de la línea respecto al botón */
-    left: 0;
+  content: "";
+  display: block;
+  width: 28%;
+  height: 1px; /* Grosor de la línea */
+  background-color: #000000; /* Color de la línea */
+  position: absolute;
+  bottom: 5px; /* Distancia de la línea respecto al botón */
+  left: 0;
 }
