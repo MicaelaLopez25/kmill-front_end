@@ -29,6 +29,9 @@ const Header = () => {
               <Link to="nosotros">Nosotros</Link>
             </li>
             <li>
+              <Link to="/pedido">Pedido</Link>
+            </li>
+            <li>
               <Link
                 to="#"
                 onClick={() =>
@@ -64,5 +67,3 @@ const Header = () => {
 };
 
 export default Header;
-
-

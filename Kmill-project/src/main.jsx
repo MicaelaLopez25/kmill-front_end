@@ -13,6 +13,7 @@ import Cookieiteams from "./components/Cookieitems.jsx";
 import Nosotros from "./components/Nosotros.jsx";
 import Login from "./components/login-register/Login.jsx";
 import Register from "./components/login-register/Register.jsx";
+import Cookieorder from "./components/MiniCart/Order.jsx";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: "/pedido",
+    element: <Cookieorder />,
   },
 ]);
 
