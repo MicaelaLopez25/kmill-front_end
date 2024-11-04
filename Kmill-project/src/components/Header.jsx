@@ -12,7 +12,7 @@ const Header = () => {
         <div className="nav-left">
           <ul>
             <li>
-              <Link to="Inicio">Inicio</Link>
+              <Link to="/">Inicio</Link>
             </li>
             <li>
               <Link to="Productos">Productos</Link>
@@ -40,3 +40,5 @@ const Header = () => {
 };
 
 export default Header;
+
+
