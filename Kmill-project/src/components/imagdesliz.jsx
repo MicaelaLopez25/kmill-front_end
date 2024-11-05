@@ -7,7 +7,7 @@ import Header from "./Header"; // Importar como default
 const ImageCarousel = () => {
   const images = [
     {
-      url: "/cookie11.jpg",
+      url: "/gaaa.jpg",
       title: "Galletas deliciosas Alfajores y Cookies artesanales",
     },
     {
@@ -35,13 +35,10 @@ const ImageCarousel = () => {
   const ImageWithTitle = ({ title, imageUrl }) => {
     return (
       <div className="titulofoto">
-          
         <img src={imageUrl} alt={title} className="imagen" />
-        <div style={{position: "absolute", bottom: "200px", left: "100px"}}>
-
-          <h2 style={{ color: "#fff"}}>{title}</h2>
+        <div style={{ position: "absolute", bottom: "200px", left: "100px" }}>
+          <h2 style={{ color: "#fff" }}>{title}</h2>
         </div>
-        
       </div>
     );
   };
