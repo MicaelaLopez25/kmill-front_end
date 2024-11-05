@@ -13,11 +13,9 @@ import Cookieiteams from "./components/Cookieitems.jsx";
 import Nosotros from "./components/Nosotros.jsx";
 import Login from "./components/login-register/Login.jsx";
 import Register from "./components/login-register/Register.jsx";
-<<<<<<< HEAD
 import Cookieorder from "./components/MiniCart/Order.jsx";
-=======
 import UserRoles from "./components/login-register/Admin-Usu.jsx";
->>>>>>> ad6e3329e49b3d85bd2c3d378e7465785b93a265
+
 
 const router = createBrowserRouter([
   {
@@ -46,16 +44,13 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Register />,
   },
-<<<<<<< HEAD
   {
     path: "/pedido",
     element: <Cookieorder />,
-=======
-
+  },
   {
     path: "/UserRoles",
     element: <UserRoles />,
->>>>>>> ad6e3329e49b3d85bd2c3d378e7465785b93a265
   },
 ]);
 

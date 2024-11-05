@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../cssMainComp/login.css"; // Asegúrate de que la ruta sea correcta
-
+import "aos/dist/aos.css"; // Importar CSS de AOS
+ 
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -44,8 +45,8 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-card">
+    <div className="login-container" >
+      <div className="login-card" data-aos="zoom-in"   data-aos-duration="250">
         <button onClick={handleBackClick} className="back-button">
           Atrás
         </button>

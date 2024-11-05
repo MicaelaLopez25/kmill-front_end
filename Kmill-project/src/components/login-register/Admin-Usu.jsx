@@ -3,6 +3,7 @@ import "../cssMainComp/ad-usu.css";
 import { useNavigate } from "react-router-dom";
 import "aos/dist/aos.css"; // Importar CSS de AOS
 
+
 const UserRoles = () => {
   const navigate = useNavigate();
   const handleBackClick = () => {
@@ -10,7 +11,7 @@ const UserRoles = () => {
   };
   return (
     <div className="fondo">
-      <div className="user-roles texto">
+      <div className="user-roles texto" data-aos="zoom-in"   data-aos-duration="250">
         <button onClick={handleBackClick} className="back-button">
           Atrás
         </button>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../cssMainComp/register.css"; // Asegúrate de que la ruta sea correcta
 import { useNavigate } from "react-router-dom";
+import "aos/dist/aos.css"; // Importar CSS de AOS
+
 
 const Register = () => {
   const navigate = useNavigate(); // Inicializa el hook
@@ -48,8 +50,8 @@ const Register = () => {
   };
 
   return (
-    <div className="centrar-container">
-      <div className="register-container">
+    <div className="centrar-container" >
+      <div className="register-container" data-aos="zoom-in"   data-aos-duration="250">
         <button onClick={handleBackClick} className="back-button">
           Atras
         </button>
