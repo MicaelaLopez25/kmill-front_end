@@ -1,4 +1,4 @@
-export function Post({ titulo, link, description, subtitulo, precio }) {
+export function Post({ titulo, description, precio }) {
   return (
     <>
       <div
@@ -6,9 +6,12 @@ export function Post({ titulo, link, description, subtitulo, precio }) {
         style={{ marginTop: "30px", marginBottom: "30px" }}
       >
         <div>
-          <img className="img-fluid bordes" src={link} alt={description} />
+          <img
+            className="img-fluid bordes"
+            src="cookie11.jpg"
+            alt={description}
+          />
           <h2 className="h3">{titulo}</h2>
-          <h4 className="h4">{subtitulo} precios:</h4>
           <h5>{precio}</h5>
         </div>
       </div>
