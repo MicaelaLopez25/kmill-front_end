@@ -11,7 +11,7 @@ export function Post({
       <div
         className="tarjetita"
         style={{ marginTop: "30px", marginBottom: "30px" }}
-        style={{ marginTop: "30px", marginBottom: "180px" }}
+        //style={{ marginTop: "30px", marginBottom: "180px" }}
       >
         <div>
           <img className="img-fluid bordes" src={link} alt={description} />

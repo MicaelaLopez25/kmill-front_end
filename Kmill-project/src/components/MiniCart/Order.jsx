@@ -1,39 +1,64 @@
 import React, { useEffect, useState } from "react";
-import { Post } from "./Grilla";
+import { Post } from "./Grilla"; // Asegúrate de importar el componente Post actualizado
 
-const Cookieitems = () => {
-  const [productos, setProductos] = useState([]);
+function Cookieorder() {
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch("http://127.0.0.1:5000/productos"); // Ajusta la URL a tu endpoint
-        const data = await response.json();
-        setProductos(data);
-      } catch (error) {
-        console.error("Error fetching products:", error);
+    console.log("products", products);
+    products.map((item, index) => {
+      console.log(item.Nombre, item.id, item.Descripcion, item.Precio);
+    });
+  }, [products]);
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:5000/jsonproducto")
+      .then((data) => data.json())
+      .then((data) => setProducts(data));
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const nuevosProductos = [];
+
+      for (const item of item.id) {
+        try {
+          // Obtener productos
+          const productosResponse = await fetch(
+            `http://127.0.0.1:5000/producto/${item.id}`
+          );
+          if (productosResponse.ok) {
+            const data = await productosResponse.json();
+            nuevosProductos.push(data); // Agrega el producto al array
+          } else {
+            console.error("Error en la respuesta de la API de productos");
+          }
+        } catch (error) {
+          console.error("Error al obtener datos:", error);
+        }
       }
+
+      setProductos(nuevosProductos); // Almacena todos los productos en un array
     };
 
-    fetchProducts();
+    fetchData();
   }, []);
 
   return (
-    <>
+    <div className="App">
       <h1 className="fuente-titulo">Productos</h1>
       <ul className="container">
-        {productos.map((producto) => (
+        {products.map((product) => (
           <Post
-            key={producto.id}
-            titulo={producto.titulo}
-            description={producto.description}
-            precio={producto.precio}
-            imagen={producto.link}
+            key={product.id}
+            titulo={product.Nombre}
+            description={product.Descripcion}
+            precio={product.Precio}
           />
         ))}
       </ul>
-    </>
+    </div>
   );
-};
+}
 
-export default Cookieitems;
+export default Cookieorder;
