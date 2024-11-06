@@ -130,7 +130,6 @@
   font-size: 15px;
   font-weight: 400;
   font-family: "Lato", sans-serif;
-  padding-top: 20px;
   text-align: left;
   font-size: 17px;
   line-height: 0.1;
@@ -139,7 +138,7 @@
 .parrafo {
   padding: 4px 0;
   font-size: 15px;
-  line-height: 19px;
+  line-height: px;
   color: #333; /* Asegúrate de que el color del texto sea visible */
   text-align: left;
 }
@@ -149,7 +148,6 @@
 .custom-list {
   list-style-type: none;
   padding-left: 0;
-  padding-top: 15px;
   color: black;
 }
 
