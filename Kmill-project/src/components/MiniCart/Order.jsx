@@ -1,57 +1,42 @@
 import React, { useEffect, useState } from "react";
-import { Post } from "./Grilla"; // Asegúrate de importar el componente Post actualizado
+import { Post } from "./Grilla";
+import Footer from "../FooterYCss/Footer";
+import Header from "../Header";
+import "./Order.css";
 
 function Cookieorder() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    console.log("products", products);
-    products.map((item, index) => {
-      console.log(item.Nombre, item.id, item.Descripcion, item.Precio);
-    });
-  }, [products]);
-
-  useEffect(() => {
-    fetch("http://127.0.0.1:5000/jsonproducto")
-      .then((data) => data.json())
-      .then((data) => setProducts(data));
-  }, []);
-
-  useEffect(() => {
     const fetchData = async () => {
-      const nuevosProductos = [];
-
-      for (const item of item.id) {
-        try {
-          // Obtener productos
-          const productosResponse = await fetch(
-            `http://127.0.0.1:5000/producto/${item.id}`
+      try {
+        const response = await fetch("http://127.0.0.1:5000/productopedido");
+        if (!response.ok) {
+          throw new Error(
+            `Network response was not ok: ${response.statusText}`
           );
-          if (productosResponse.ok) {
-            const data = await productosResponse.json();
-            nuevosProductos.push(data); // Agrega el producto al array
-          } else {
-            console.error("Error en la respuesta de la API de productos");
-          }
-        } catch (error) {
-          console.error("Error al obtener datos:", error);
         }
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        // Aquí puedes manejar el error de forma más específica,
+        // por ejemplo, mostrando un mensaje de error al usuario.
       }
-
-      setProductos(nuevosProductos); // Almacena todos los productos en un array
     };
 
     fetchData();
   }, []);
 
   return (
-    <div className="App">
-      <h1 className="fuente-titulo">Productos</h1>
+    <div>
+      <h1 className="fuente-titulo">Alfajores</h1>
       <ul className="container">
         {products.map((product) => (
           <Post
             key={product.id}
             titulo={product.Nombre}
+            rutaimg={product.imagen}
             description={product.Descripcion}
             precio={product.Precio}
           />

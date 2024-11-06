@@ -1,4 +1,6 @@
-export function Post({ titulo, description, precio }) {
+import "./Order.css";
+
+export function Post({ titulo, rutaimg, description, precio }) {
   return (
     <>
       <div
@@ -6,13 +8,10 @@ export function Post({ titulo, description, precio }) {
         style={{ marginTop: "30px", marginBottom: "30px" }}
       >
         <div>
-          <img
-            className="img-fluid bordes"
-            src="cookie11.jpg"
-            alt={description}
-          />
+          <img className="imagencookie" src={rutaimg} alt={description} />
           <h2 className="h3">{titulo}</h2>
-          <h5>{precio}</h5>
+          <h5 className="h3">${precio}</h5>
+          <button onClick={}>Agregar al pedido</button>
         </div>
       </div>
     </>
