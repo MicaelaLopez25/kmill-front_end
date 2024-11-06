@@ -15,12 +15,12 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const userData = {
       email,
       password,
     };
-
+  
     try {
       const response = await fetch("http://127.0.0.1:5000/login", {
         method: "POST",
@@ -29,11 +29,16 @@ const Login = () => {
         },
         body: JSON.stringify(userData),
       });
-
+  
       if (response.ok) {
         const data = await response.json();
-        localStorage.setItem("token", data.jwtToken); // Almacena el token en el almacenamiento local
-        navigate("/"); // Redirige a la página principal
+  
+        // Aquí guardas el token y el rol en localStorage
+        localStorage.setItem("token", data.jwtToken);  // Guardamos el token
+        localStorage.setItem("role", data.role);  // Guardamos el rol (Admin)
+  
+        // Redirige a la página principal
+        navigate("/"); 
       } else {
         const errorData = await response.json();
         setErrorMessage(errorData.message || "Error en el inicio de sesión");
@@ -43,6 +48,8 @@ const Login = () => {
       setErrorMessage("Error al conectar con el servidor");
     }
   };
+  
+  
 
   return (
     <div className="login-container" >
