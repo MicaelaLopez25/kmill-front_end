@@ -8,12 +8,10 @@ export function Post({
     <>
       <div
         className="tarjetita"
-<<<<<<< HEAD
         style={{ marginTop: "30px", marginBottom: "30px" }}
         //style={{ marginTop: "30px", marginBottom: "180px" }}
-=======
         style={{ marginTop: "30px", marginBottom: "180px" }}
->>>>>>> 50a0a7bb0b8b2b99d51de3ffff11f1691eabc569
+
       >
         <div>
           <img className="img-fluid bordes" src={link} alt={Descripcion} />

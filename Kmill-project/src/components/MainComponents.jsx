@@ -21,13 +21,13 @@ export function MainComponets() {
         data-aos-offset="300"
         data-aos-easing="ease-in-sine"
       >
-        <img className="imagen" src="/galletas.jpg" alt="Galletas" />
+        <img className="imagenM" src="/galletas.jpg" alt="Galletas" />
       </div>
-      <div className="texto">
+      <div className="texto" >
         <h1 className="centrar letN">Desde 2024</h1>
         <h1 className="centrar titulo">Tienda Kmill</h1>
-        <p>{parrafo}</p>
-        <div data-aos="fade-up">
+        <p className="parrafo">{parrafo}</p>
+        <div data-aos="fade-up" className="sepaB">
           <Link to="/nosotros" className="boton outline separador">
             Conocer más
           </Link>

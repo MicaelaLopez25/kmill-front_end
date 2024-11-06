@@ -3,7 +3,7 @@
   align-items: center; /* Alinear verticalmente al centro */
 }
 
-.imagen {
+.imagenM {
   width: 500px; /* Ajusta el tamaño de la imagen según sea necesario */
   margin-left: 120px; /* Espacio entre la imagen y el texto */
   border-radius: 32px;
@@ -13,7 +13,7 @@
 
 .texto {
   text-align: left; /* Alinear el texto a la izquierda */
-  margin-left: 52px;
+  margin-left: 6px;
   color: #1a1a1a;
 }
 .titulo {
@@ -30,13 +30,22 @@
   display: flex;
   justify-content: center;
 }
+.parrafo{
+  padding: 4px 0;
+    font-size: 15px;
+    line-height: 19px;
+    color: #333;
+    text-align: left;
+    margin-left: 114px;
+}
+
 .letN {
   font-family: "Herr Von Muellerhoff", cursive;
   color: #a57d5c;
   font-size: 55px;
   display: block;
   line-height: 63px;
-  margin-bottom: -33px;
+  margin-bottom: -87px;
   margin-left: 186px;
 }
 .boton.outline {
@@ -55,4 +64,7 @@
   padding: 10px 25px;
   font-weight: 500;
   transition: all 0.3s;
+}
+.sepaB{
+  margin-left: 117px;
 }
