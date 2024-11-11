@@ -26,7 +26,7 @@ function ProductosHome() {
   return (
     <section className="productos-home">
       <div className="tituloprod">
-        <h2>Nuestros Productos</h2>
+        <h2 className="tituloprod">Nuestros Productos</h2>
       </div>
       <div className="productos-container">
         {arr.map((element, index) => (

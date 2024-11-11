@@ -31,11 +31,11 @@ export function Post({
         <img className="imagencookie" src={rutaimg} alt={description} />
         <h2 className="h3">{titulo}</h2>
         <h5 className="h3">${precio}</h5>
-        <div className="flex items-center">
+        <div className="btns">
           <button className="btncart" onClick={handleDecrease}>
             <Minus className="w-4 h-4" />
           </button>
-          <span className="mx-2 text-lg" style={{ color: "black" }}>
+          <span className="cant" style={{ color: "black" }}>
             {quantity}
           </span>
           <button className="btncart" onClick={handleIncrease}>

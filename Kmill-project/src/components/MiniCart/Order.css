@@ -104,8 +104,23 @@
 .btncart {
   background-color: #474747;
   border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .btncart:hover {
   background-color: #333;
+}
+
+.btns {
+  display: flex;
+  align-items: self-end;
+}
+
+.cant {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.6rem;
+
+  font-size: 1.25rem;
 }
