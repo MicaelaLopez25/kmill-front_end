@@ -56,11 +56,8 @@ const Header = () => {
         {isProductosPage && role === "Admin" && (
           <div className="nav-right">
             <div className="admin-buttons">
-              <Link to="/agregar-producto" className="btn-admin">
+              <Link to="" className="btn-admin">
                 Agregar Producto
-              </Link>
-              <Link to="/modificar-producto" className="btn-admin">
-                Modificar Producto
               </Link>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Plus, Minus } from "lucide-react";
+/*import { Plus, Minus } from "lucide-react";*/
 import "./Order.css";
 
 export function Post({
