@@ -23,17 +23,6 @@ export function Post({
   };
 
   return (
-<<<<<<< HEAD
-    <>
-      <div
-        className="tarjetita"
-        style={{ marginTop: "30px", marginBottom: "30px" }}
-      >
-        <div>
-          <img className="imagencookie" src={rutaimg} alt={description} />
-          <h2 className="h3">{titulo}</h2>
-          <h5 className="h3">${precio}</h5>
-=======
     <div
       className="tarjetitacart"
       style={{ marginTop: "30px", marginBottom: "30px" }}
@@ -52,7 +41,6 @@ export function Post({
           <button className="btncart" onClick={handleIncrease}>
             <Plus className="w-4 h-4" />
           </button>
->>>>>>> e360ac9cc945b7164d933fdd6dd10555af0dcfe7
         </div>
       </div>
     </div>

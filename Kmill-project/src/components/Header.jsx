@@ -1,9 +1,7 @@
 import React from "react";
-<<<<<<< HEAD
-import { Link, useNavigate } from "react-router-dom";
-=======
+
 import { Link, useNavigate, useLocation } from "react-router-dom"; // Importamos useLocation
->>>>>>> e360ac9cc945b7164d933fdd6dd10555af0dcfe7
+
 import { FaUserAlt, FaUserShield } from "react-icons/fa"; // Íconos de Admin y Usuario
 import "./cssMainComp/header.css";
 
