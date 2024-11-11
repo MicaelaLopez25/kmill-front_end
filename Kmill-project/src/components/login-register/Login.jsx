@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../cssMainComp/login.css"; // Asegúrate de que la ruta sea correcta
 import "aos/dist/aos.css"; // Importar CSS de AOS
- 
+
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -15,12 +15,12 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const userData = {
       email,
       password,
     };
-  
+
     try {
       const response = await fetch("http://127.0.0.1:5000/login", {
         method: "POST",
@@ -29,16 +29,16 @@ const Login = () => {
         },
         body: JSON.stringify(userData),
       });
-  
+
       if (response.ok) {
         const data = await response.json();
-  
+
         // Aquí guardas el token y el rol en localStorage
-        localStorage.setItem("token", data.jwtToken);  // Guardamos el token
-        localStorage.setItem("role", data.role);  // Guardamos el rol (Admin)
-  
+        localStorage.setItem("token", data.jwtToken); // Guardamos el token
+        localStorage.setItem("role", data.role); // Guardamos el rol (Admin)
+
         // Redirige a la página principal
-        navigate("/"); 
+        navigate("/");
       } else {
         const errorData = await response.json();
         setErrorMessage(errorData.message || "Error en el inicio de sesión");
@@ -48,12 +48,10 @@ const Login = () => {
       setErrorMessage("Error al conectar con el servidor");
     }
   };
-  
-  
 
   return (
-    <div className="login-container" >
-      <div className="login-card" data-aos="zoom-in"   data-aos-duration="250">
+    <div className="login-container">
+      <div className="login-card" data-aos="zoom-in" data-aos-duration="250">
         <button onClick={handleBackClick} className="back-button">
           Atrás
         </button>

@@ -8,20 +8,19 @@ const ImageCarousel = () => {
   const images = [
     {
       url: "/gpantalla1.jpg",
-      title: "Galletas deliciosas Alfajores y Cookies artesanales",
+      title: "Cookies y Alfajores artesanales",
     },
     {
       url: "/gpantalla2.jpg",
-      title: "Galletas deliciosas Alfajores y Cookies artesanales",
+      title: "Cookies y Alfajores artesanales",
     },
     {
       url: "/gpantalla3.jpg",
-      title: "Galletas deliciosas Alfajores y Cookies artesanales",
+      title: "Cookies y Alfajores artesanales",
     },
   ];
 
   const [currentImage, setCurrentImage] = useState(0);
-
   useEffect(() => {
     AOS.init();
 
@@ -38,6 +37,7 @@ const ImageCarousel = () => {
         <div className="image-wrapper">
           <img src={imageUrl} alt={title} className="imagen" />
         </div>
+
         <div className="title-container">
           <h2>{title}</h2>
         </div>
@@ -50,10 +50,8 @@ const ImageCarousel = () => {
   }, [currentImage]);
 
   return (
-    
     <div className="imagendes">
-            <div className="shadow-overlay"></div> {/* Sombra */}
-
+      <div className="shadow-overlay"></div> {/* Sombra */}
       <ImageWithTitle
         title={images[currentImage].title}
         imageUrl={images[currentImage].url}

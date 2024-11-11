@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Post } from "./grilla";
+<<<<<<< HEAD
 import Header from "./Header.jsx";
 import Footer from "./FooterYCss/Footer";
+=======
+import Header from "./Header";
+
+>>>>>>> e360ac9cc945b7164d933fdd6dd10555af0dcfe7
 // Simulando los productos
 const posts = [
   {
@@ -34,7 +39,10 @@ const posts = [
     Descripcion: "f",
     link: "cookiechocolina.jpg",
   },
+<<<<<<< HEAD
 
+=======
+>>>>>>> e360ac9cc945b7164d933fdd6dd10555af0dcfe7
   { id: 1, titulo: 1 },
   { id: 2, titulo: 2, link: 2 },
   { id: 3, titulo: 1, link: "/cokie2.jpg" },
@@ -62,7 +70,10 @@ const Cookieitems = () => {
     fetch("http://127.0.0.1:5000/ingrediente_producto/")
       .then((data) => data.json())
       .then((data) => setIngredientes(data));
+<<<<<<< HEAD
 
+=======
+>>>>>>> e360ac9cc945b7164d933fdd6dd10555af0dcfe7
     if (products.length > 0) {
       products.forEach((producto) => {
         // Verificar si ya se cargaron los ingredientes para este producto
@@ -90,6 +101,7 @@ const Cookieitems = () => {
   }, [ingredientes]);
 
   return (
+<<<<<<< HEAD
     <div className="fondoCookies">
       <Header />
       <div>
@@ -108,6 +120,23 @@ const Cookieitems = () => {
       </div>
       <Footer />
     </div>
+=======
+    <>
+      <Header />
+      <h1 className="fuente-titulo">Productos</h1>
+      <ul className="container">
+        {products.map((elemento, index) => (
+          <Post
+            key={elemento.id || index} // Si id no está definido, usa el índice
+            titulo={elemento.Nombre || "Producto sin título"}
+            Descripcion={elemento.Descripcion}
+            link={elemento.imagen || "Sin imagen "}
+            ingredientes={ingredientes[elemento.id] || []}
+          />
+        ))}
+      </ul>
+    </>
+>>>>>>> e360ac9cc945b7164d933fdd6dd10555af0dcfe7
   );
 };
 

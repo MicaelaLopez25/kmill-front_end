@@ -1,10 +1,15 @@
 import React from "react";
+<<<<<<< HEAD
 import { Link, useNavigate } from "react-router-dom";
+=======
+import { Link, useNavigate, useLocation } from "react-router-dom"; // Importamos useLocation
+>>>>>>> e360ac9cc945b7164d933fdd6dd10555af0dcfe7
 import { FaUserAlt, FaUserShield } from "react-icons/fa"; // Íconos de Admin y Usuario
 import "./cssMainComp/header.css";
 
 const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation(); // Obtenemos la ubicación actual de la ruta
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role"); // Obtener el rol desde localStorage
 
@@ -13,6 +18,9 @@ const Header = () => {
     localStorage.removeItem("role"); // También eliminar el rol al cerrar sesión
     navigate("/"); // Redirigir a la página de inicio de sesión
   };
+
+  // Verificamos si estamos en la página de productos
+  const isProductosPage = location.pathname === "/productos";
 
   return (
     <header className="header">
@@ -48,12 +56,28 @@ const Header = () => {
             </li>
           </ul>
         </div>
+        {/* Solo mostramos los botones de agregar y modificar si estamos en la página de productos */}
+        {isProductosPage && role === "Admin" && (
+          <div className="nav-right">
+            <div className="admin-buttons">
+              <Link to="/agregar-producto" className="btn-admin">
+                Agregar Producto
+              </Link>
+              <Link to="/modificar-producto" className="btn-admin">
+                Modificar Producto
+              </Link>
+            </div>
+          </div>
+        )}
       </nav>
+
       <div className="login">
         <ul>
           {!token ? (
             <li>
-              <Link to="/UserRoles">Ingresar</Link>
+              <Link to="/UserRoles" className="blanco">
+                Ingresar
+              </Link>
             </li>
           ) : (
             <>
