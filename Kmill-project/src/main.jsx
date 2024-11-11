@@ -9,14 +9,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import CookieDetail from "./components/CookieDetail.jsx";
-import Cookieiteams from "./components/Cookieitems.jsx";
 import Nosotros from "./components/Nosotros.jsx";
 import Login from "./components/login-register/Login.jsx";
 import Register from "./components/login-register/Register.jsx";
 import Cookieorder from "./components/MiniCart/Order.jsx";
 import UserRoles from "./components/login-register/Admin-Usu.jsx";
-
-
+import Cookieitems from "./components/Cookieitems.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/productos",
-    element: <Cookieiteams />,
+    element: <Cookieitems />,
   },
   {
     path: "/productos/:producto",

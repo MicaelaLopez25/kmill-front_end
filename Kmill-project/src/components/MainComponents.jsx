@@ -2,7 +2,6 @@ import "../components/cssMainComp/mainComp.css"; // Ajusta la ruta según la ubi
 import AOS from "aos";
 import "aos/dist/aos.css"; // Importar CSS de AOS
 import { Link } from "react-router-dom"; // Importa Link de react-router-dom
-import Cookieiteams from "./Cookieitems";
 
 AOS.init({
   // Opcional: configuración de AOS
@@ -23,7 +22,7 @@ export function MainComponets() {
       >
         <img className="imagenM" src="/galletas.jpg" alt="Galletas" />
       </div>
-      <div className="texto" >
+      <div className="texto">
         <h1 className="centrar letN">Desde 2024</h1>
         <h1 className="centrar titulo">Tienda Kmill</h1>
         <p className="parrafo">{parrafo}</p>
