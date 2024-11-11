@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Post } from "./grilla";
-import Header from "./Header";
+import Header from "./Header.jsx";
 import Footer from "./FooterYCss/Footer";
 
 // Simulando los productos
@@ -35,6 +35,7 @@ const posts = [
     Descripcion: "f",
     link: "cookiechocolina.jpg",
   },
+
   { id: 1, titulo: 1 },
   { id: 2, titulo: 2, link: 2 },
   { id: 3, titulo: 1, link: "/cokie2.jpg" },
@@ -43,25 +44,25 @@ const posts = [
 const Cookieitems = () => {
   const [products, setProducts] = useState([]);
   const [ingredientes, setIngredientes] = useState({});
-  const [productosCargados, setProductosCargados] = useState(new Set());
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [productoEditado, setProductoEditado] = useState(null);
+  const [productosCargados, setProductosCargados] = useState(new Set()); // Estado para controlar productos ya cargados
+  const [isAdmin, setIsAdmin] = useState(false); // Estado para verificar si el usuario es Admin
+  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar la visibilidad del modal
+  const [productoEditado, setProductoEditado] = useState(null); // Estado para el producto que está siendo editado
 
-  // Función para eliminar duplicados
+  // Función para eliminar duplicados de un array
   const eliminarDuplicados = (array) => {
     return [...new Set(array)];
   };
 
   // Verificar si el usuario es Admin
   useEffect(() => {
-    const role = localStorage.getItem("role");
+    const role = localStorage.getItem("role"); // Verificamos el rol desde localStorage
     if (role === "Admin") {
       setIsAdmin(true); // Si es Admin, actualizamos el estado
     }
   }, []);
 
-  // Obtener productos desde la API
+  // Obtener productos
   useEffect(() => {
     fetch("http://127.0.0.1:5000/jsonproducto")
       .then((data) => data.json())
@@ -70,28 +71,34 @@ const Cookieitems = () => {
 
   // Obtener ingredientes para cada producto
   useEffect(() => {
+    fetch("http://127.0.0.1:5000/ingrediente_producto/")
+      .then((data) => data.json())
+      .then((data) => setIngredientes(data));
     if (products.length > 0) {
       products.forEach((producto) => {
+        // Verificar si ya se cargaron los ingredientes para este producto
         if (!productosCargados.has(producto.id)) {
-          fetch(http://127.0.0.1:5000/ingrediente_producto/${producto.id})
+          fetch(`http://127.0.0.1:5000/ingrediente_producto/${producto.id}`)
             .then((data) => data.json())
             .then((data) => {
-              const ingredientesUnicos = eliminarDuplicados(data);
+              const ingredientesUnicos = eliminarDuplicados(data); // Eliminar duplicados antes de actualizar
               setIngredientes((prev) => ({
                 ...prev,
-                [producto.id]: ingredientesUnicos,
+                [producto.id]: ingredientesUnicos, // Guardamos los ingredientes sin duplicados
               }));
+
+              // Marcar este producto como cargado
               setProductosCargados((prev) => new Set(prev.add(producto.id)));
             });
         }
       });
     }
-  }, [products, productosCargados]);
+  }, [products, productosCargados]); // Solo se ejecuta cuando `products` cambia
 
-  // Función para manejar la modificación de un producto
+  // Función para manejar el clic en el botón de modificar
   const handleModificarClick = (producto) => {
-    setProductoEditado(producto);
-    setIsModalOpen(true); // Abrir el modal de edición
+    setProductoEditado(producto); // Guardamos el producto a editar
+    setIsModalOpen(true); // Abrimos el modal
   };
 
   // Función para manejar los cambios en el formulario de edición
@@ -103,9 +110,10 @@ const Cookieitems = () => {
     }));
   };
 
-  // Función para guardar los cambios en el producto
+  // Función para guardar los cambios
   const handleGuardarCambios = () => {
-    fetch(http://127.0.0.1:5000/productoActualizar/${productoEditado.id}, {
+    // Realizamos la solicitud PUT al backend para actualizar el producto
+    fetch(`http://127.0.0.1:5000/productoActualizar/${productoEditado.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -118,6 +126,7 @@ const Cookieitems = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+        // Si la actualización fue exitosa, actualizamos el estado local de los productos
         if (data.message === "Producto actualizado exitosamente") {
           setProducts((prevProducts) =>
             prevProducts.map((producto) =>
@@ -125,6 +134,7 @@ const Cookieitems = () => {
             )
           );
         } else {
+          // Si hubo algún error, muestra un mensaje (puedes agregar más lógica aquí)
           alert("Error al actualizar el producto");
         }
       })
@@ -133,36 +143,36 @@ const Cookieitems = () => {
         console.error("Error:", error);
       });
 
-    setIsModalOpen(false); // Cerrar el modal
-    setProductoEditado(null); // Limpiar el producto editado
+    // Cerrar el modal y limpiar el estado
+    setIsModalOpen(false);
+    setProductoEditado(null);
   };
 
-  // Función para cerrar el modal sin guardar cambios
+  // Función para cerrar el modal
   const handleCerrarModal = () => {
-    setIsModalOpen(false); // Cerrar modal
+    setIsModalOpen(false); // Cerrar el modal sin guardar cambios
     setProductoEditado(null); // Limpiar el producto editado
   };
 
   return (
     <body className="fondoCookies">
-      {/* en realidad no se usa el body aca*/}
       <Header />
       <div>
         <h1 className="fuente-titulo">Productos</h1>
         <ul className="container-cookies">
-          {products.map((producto, index) => (
-            <li key={producto.id || index} className="producto-item">
+          {products.map((elemento, index) => (
+            <li key={elemento.id || index} className="producto-item">
               <Post
-                titulo={producto.Nombre || "Producto sin título"}
-                Descripcion={producto.Descripcion}
-                link={producto.imagen || "Sin imagen"}
-                ingredientes={ingredientes[producto.id] || []}
+                titulo={elemento.Nombre || "Producto sin título"}
+                Descripcion={elemento.Descripcion}
+                link={elemento.imagen || "Sin imagen "}
+                ingredientes={ingredientes[elemento.id] || []}
               />
-              {/* Mostrar el botón de modificación solo si es Admin */}
+              {/* Mostrar el botón solo si es Admin */}
               {isAdmin && (
                 <button
                   className="buttonModificar"
-                  onClick={() => handleModificarClick(producto)}
+                  onClick={() => handleModificarClick(elemento)}
                 >
                   Modificar Producto
                 </button>
@@ -172,7 +182,7 @@ const Cookieitems = () => {
         </ul>
       </div>
 
-      {/* Modal para editar el producto */}
+      {/* Modal para editar producto */}
       {isModalOpen && productoEditado && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -228,7 +238,6 @@ const Cookieitems = () => {
           </div>
         </div>
       )}
-
       <Footer />
     </body>
   );
