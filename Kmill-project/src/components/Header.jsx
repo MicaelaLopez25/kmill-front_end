@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaUserAlt, FaUserShield } from 'react-icons/fa';  // Íconos de Admin y Usuario
+import { FaUserAlt, FaUserShield } from "react-icons/fa"; // Íconos de Admin y Usuario
 import "./cssMainComp/header.css";
 
 const Header = () => {
@@ -61,12 +61,12 @@ const Header = () => {
               <li className="role-display abajo">
                 {role === "Admin" ? (
                   <>
-                    <FaUserShield size={20} style={{ marginRight: '5px' }} />
+                    <FaUserShield size={20} style={{ marginRight: "5px" }} />
                     Admin
                   </>
                 ) : (
                   <>
-                    <FaUserAlt size={20} style={{ marginRight: '5px' }} />
+                    <FaUserAlt size={20} style={{ marginRight: "5px" }} />
                     Usuario
                   </>
                 )}

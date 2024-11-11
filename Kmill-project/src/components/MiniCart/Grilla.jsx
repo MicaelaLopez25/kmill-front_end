@@ -11,7 +11,6 @@ export function Post({ titulo, rutaimg, description, precio }) {
           <img className="imagencookie" src={rutaimg} alt={description} />
           <h2 className="h3">{titulo}</h2>
           <h5 className="h3">${precio}</h5>
-          <button onClick={}>Agregar al pedido</button>
         </div>
       </div>
     </>
