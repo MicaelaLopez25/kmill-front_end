@@ -1,6 +1,7 @@
 .contenido {
   display: flex; /* Usar flexbox para alinear los elementos */
   align-items: center; /* Alinear verticalmente al centro */
+  margin-top: 54px;
 }
 
 .imagenM {
@@ -30,13 +31,13 @@
   display: flex;
   justify-content: center;
 }
-.parrafo{
+.parrafo {
   padding: 4px 0;
-    font-size: 15px;
-    line-height: 19px;
-    color: #333;
-    text-align: left;
-    margin-left: 114px;
+  font-size: 15px;
+  line-height: 19px;
+  color: #333;
+  text-align: left;
+  margin-left: 114px;
 }
 
 .letN {
@@ -65,6 +66,6 @@
   font-weight: 500;
   transition: all 0.3s;
 }
-.sepaB{
+.sepaB {
   margin-left: 117px;
 }

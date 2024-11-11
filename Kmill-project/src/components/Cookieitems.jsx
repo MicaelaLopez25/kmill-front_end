@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Post } from "./grilla";
+import Header from "./Header";
 
 // Simulando los productos
 const posts = [
@@ -88,6 +89,7 @@ const Cookieitems = () => {
 
   return (
     <>
+      <Header />
       <h1 className="fuente-titulo">Productos</h1>
       <ul className="container">
         {products.map((elemento, index) => (
