@@ -144,7 +144,8 @@ const Cookieitems = () => {
   };
 
   return (
-    <div className="fondoCookies">
+    <body className="fondoCookies">
+      {/* en realidad no se usa el body aca*/}
       <Header />
       <div>
         <h1 className="fuente-titulo">Productos</h1>
@@ -229,7 +230,7 @@ const Cookieitems = () => {
       )}
 
       <Footer />
-    </div>
+    </body>
   );
 };
 
