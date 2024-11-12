@@ -1,5 +1,5 @@
 import React from "react";
-/*import { Plus, Minus } from "lucide-react";*/
+import { Plus, Minus } from "lucide-react";
 import "./Order.css";
 
 export function Post({
@@ -29,8 +29,8 @@ export function Post({
     >
       <div>
         <img className="imagencookie" src={rutaimg} alt={description} />
-        <h2 className="h3">{titulo}</h2>
-        <h5 className="h3">${precio}</h5>
+        <h2 className="h3cart">{titulo}</h2>
+        <h5 className="h3cart">${precio}</h5>
         <div className="btns">
           <button className="btncart" onClick={handleDecrease}>
             <Minus className="w-4 h-4" />

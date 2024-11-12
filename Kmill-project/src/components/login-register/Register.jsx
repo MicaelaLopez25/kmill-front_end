@@ -18,7 +18,7 @@ const Register = () => {
     const userData = {
       nombre: username,
       apellido: lastname,
-      email,
+      email :email,
       telefono: telefono, // Asegúrate de que este campo esté correctamente definido
       password,
     };
