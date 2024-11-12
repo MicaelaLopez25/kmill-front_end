@@ -106,28 +106,30 @@
 
 /* tilde rosa */
 
-.custom-list {
+.custom-list-tilde {
   list-style-type: none;
   padding-left: 0;
   color: rgb(255, 255, 255);
   background-color: #222223;
 }
 
-.custom-list li {
+.custom-list-tilde li {
   position: relative;
-  padding-left: 20px; /* Ajusta este valor para acercar o alejar el texto del ícono */
+  padding-left: 30px; /* Espacio extra para la tilde */
   margin-bottom: 7px;
 }
 
-.custom-list li::before {
+.custom-list-tilde li::before {
   content: "✔"; /* Símbolo de la tilde */
-  color: #de99a6; /* Color dorado */
-  font-size: 18px; /* Tamaño ajustado del ícono */
+  color: #de99a6; /* Color de la tilde rosa */
+  font-size: 18px; /* Ajusta el tamaño */
   position: absolute;
-  left: 0; /* Ajusta la posición horizontal del ícono */
-  top: 0;
-  line-height: 1, 9; /* Asegura que el ícono esté alineado verticalmente con el texto */
+  left: 0; /* Alinea la tilde a la izquierda */
+  top: 50%; /* Centra la tilde verticalmente */
+  transform: translateY(-50%); /* Asegura la alineación exacta */
+  line-height: 1.9; /* Ajuste vertical */
 }
+
 .buttonModificar {
   width: 64%;
   padding: 10px;

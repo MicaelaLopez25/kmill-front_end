@@ -161,7 +161,7 @@ const Cookieitems = () => {
         <h1 className="fuente-titulo">Productos</h1>
         <ul className="container-cookies">
           {products.map((elemento, index) => (
-            <li key={elemento.id || index} className="producto-item">
+            <li  style={{ listStyle: "none" }} key={elemento.id || index} className="producto-item">
               <Post
                 titulo={elemento.Nombre || "Producto sin título"}
                 Descripcion={elemento.Descripcion}
