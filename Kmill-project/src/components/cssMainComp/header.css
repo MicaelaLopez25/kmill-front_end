@@ -15,6 +15,7 @@
 .logo img {
   max-height: 45px; /* Ajusta la altura máxima del logo */
   width: auto; /* Mantiene la proporción de la imagen */
+  margin-right: 30px; /* Espacio entre el logo y los botones */
 }
 
 .nav ul {
@@ -192,4 +193,202 @@
 
 .btn-admin:active {
   transform: scale(0.95);
+}
+.btn-agregar {
+  padding: 8px 15px;
+  background-color: #de99a6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  margin-left: 30px; /* Separación entre el "Agregar Producto" y los otros botones */
+}
+.btn-agregar:hover {
+  background-color: #c78292;
+}
+
+.btn-agregar:active {
+  transform: scale(0.95);
+}
+/* Estilos del modal */
+/* Estilos del modal */
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1050;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Fondo con opacidad */
+  overflow: auto;
+  animation: fadeIn 0.3s ease-in-out;
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+}
+
+/* Diálogo del modal */
+.modal-dialog {
+  position: relative;
+  margin: 0; /* Eliminar márgenes */
+  width: 100%;
+  max-width: 600px; /* Ancho máximo del modal */
+  animation: slideIn 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column; /* Para colocar el formulario y el botón de cierre uno debajo del otro */
+}
+
+/* Contenido del modal */
+.modal-content {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Asegura que el contenido esté en columna */
+  justify-content: center;
+  align-items: center; /* Alinea el contenido al centro horizontalmente */
+}
+
+/* Estilos de la cabecera del modal */
+.modal-header {
+  display: flex;
+  justify-content: center; /* Centra el título */
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 8px; /* Espacio entre el título y el formulario */
+}
+
+/* Mueve la X al pie del modal */
+/* Estilos para el botón de cierre "X" */
+.close {
+  background: none; /* Asegura que no haya fondo */
+  border: none; /* Elimina cualquier borde */
+  font-size: 2rem;
+  color: #000000; /* Color inicial de la "X" */
+  cursor: pointer;
+  transition: color 0.3s;
+  position: absolute;
+  bottom: -9px;
+}
+
+/* Estilo al pasar el mouse (sin fondo azul) */
+.close:hover {
+  color: #f00; /* Cambia el color de la "X" al pasar el ratón */
+  background: none; /* Asegura que no haya fondo en hover */
+  box-shadow: none; /* Elimina cualquier sombra si existe */
+
+}
+
+/* Cuerpo del modal */
+.modal-body {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos dentro del formulario estén en columna */
+  justify-content: center;
+  align-items: center; /* Centra el formulario */
+}
+
+/* Estilo de los formularios */
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+label {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  padding-left: 140px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  box-sizing: border-box; /* Asegura que los elementos no se desborden */
+}
+.modal-input-field{
+  width: 100%;
+  padding: 10px;
+  padding-left: 140px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Botón de agregar producto */
+button[type="submit"] {
+  background-color: #6d2367;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+  align-self: center; /* Centra el botón dentro del formulario */
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Estilo específico para el botón "Agregar Producto" */
+.agregar-producto-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+  align-self: center;
+}
+
+.agregar-producto-btn:hover {
+  background-color: #45a049;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
