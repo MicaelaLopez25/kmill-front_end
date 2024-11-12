@@ -3,6 +3,8 @@
   padding: 50px;
   margin: 10px;
   display: grid;
+  margin-right: 155px;
+
 }
 
 .productos-container {
@@ -53,4 +55,6 @@
   font: 55px "Herr Von Muellerhoff", cursive;
   color: #a57d5c;
   text-align: center;
+  margin-left: 84px;
+    margin-bottom: 24px;
 }
