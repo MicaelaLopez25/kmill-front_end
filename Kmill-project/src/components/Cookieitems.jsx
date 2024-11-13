@@ -101,6 +101,32 @@ const Cookieitems = () => {
     setIsModalOpen(true); // Abrimos el modal
   };
 
+  // Función para manejar el clic en el botón de eliminar
+  const handleEliminarClick = (producto) => {
+    // Confirmar con el usuario si está seguro de eliminar el producto
+    if (window.confirm("¿Estás seguro de que deseas eliminar este producto?")) {
+      // Realizar la solicitud DELETE al backend para eliminar el producto
+      fetch(`http://127.0.0.1:5000/productoEliminar/${producto.id}`, {
+        method: "DELETE",
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.message === "Producto eliminado exitosamente") {
+            // Si la eliminación fue exitosa, actualizamos el estado para remover el producto de la UI
+            setProducts((prevProducts) =>
+              prevProducts.filter((prod) => prod.id !== producto.id)
+            );
+            alert("Producto eliminado con éxito");
+          } else {
+            alert("Hubo un error al eliminar el producto");
+          }
+        })
+        .catch((error) => {
+          alert("Hubo un problema con la solicitud de eliminación");
+          console.error("Error:", error);
+        });
+    }
+  };
   // Función para manejar los cambios en el formulario de edición
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -161,7 +187,7 @@ const Cookieitems = () => {
         <h1 className="fuente-titulo">Productos</h1>
         <ul className="container-cookies">
           {products.map((elemento, index) => (
-            <li  style={{ listStyle: "none" }} key={elemento.id || index} className="producto-item">
+            <li style={{ listStyle: "none" }} key={elemento.id || index} className="producto-item">
               <Post
                 titulo={elemento.Nombre || "Producto sin título"}
                 Descripcion={elemento.Descripcion}
@@ -170,13 +196,22 @@ const Cookieitems = () => {
               />
               {/* Mostrar el botón solo si es Admin */}
               {isAdmin && (
-                <button
-                  className="buttonModificar"
-                  onClick={() => handleModificarClick(elemento)}
-                >
-                  Modificar Producto
-                </button>
-              )}
+  <div className="producto-boton-container">
+    <button
+      className="buttonModificar"
+      onClick={() => handleModificarClick(elemento)}
+    >
+      Modificar Producto
+    </button>
+    <button
+      className="buttonEliminar"
+      onClick={() => handleEliminarClick(elemento)} // Función para eliminar el producto
+    >
+      Borrar Producto
+    </button>
+  </div>
+)}
+
             </li>
           ))}
         </ul>

@@ -244,7 +244,7 @@
   flex-direction: column; /* Para colocar el formulario y el botón de cierre uno debajo del otro */
 }
 
-/* Contenido del modal */
+/* Modal y cuerpo del modal */
 .modal-content {
   background-color: #fff;
   padding: 20px 30px;
@@ -255,7 +255,12 @@
   flex-direction: column; /* Asegura que el contenido esté en columna */
   justify-content: center;
   align-items: center; /* Alinea el contenido al centro horizontalmente */
+  width: 100%;
+  max-width: 600px; /* Ancho máximo del modal */
+  height: auto;
+  max-height: 600px; /* Asegura que el contenido no sobrepase demasiado el modal */
 }
+
 
 /* Estilos de la cabecera del modal */
 .modal-header {
@@ -297,14 +302,15 @@
 /* Cuerpo del modal */
 .modal-body {
   width: 100%;
-  padding: 0;
+  padding: 20px;
   display: flex;
-  flex-direction: column; /* Asegura que los elementos dentro del formulario estén en columna */
-  justify-content: center;
-  align-items: center; /* Centra el formulario */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch; /* Alinea los elementos dentro de la columna */
+  overflow-y: auto; /* Permite el desplazamiento si el contenido es largo */
+  max-height: 400px; /* Altura máxima para permitir el scroll */
 }
-
-/* Estilo de los formularios */
+/* Formulario dentro del modal */
 .form-group {
   margin-bottom: 20px;
   width: 100%;
@@ -391,4 +397,65 @@ button[type="submit"]:hover {
   to {
     transform: translateY(0);
   }
+}
+/* Estilo para la lista de ingredientes */
+.ingredientes-list {
+  display: flex;
+  flex-direction: column; /* Muestra los ingredientes uno debajo del otro */
+  gap: 10px; /* Espacio entre los ingredientes */
+  margin-right: 164px;
+
+}
+
+/* Estilo para cada elemento de ingrediente */
+.ingrediente-item {
+  display: flex; /* Alinea checkbox y etiqueta en línea */
+  align-items: center; /* Alinea los elementos verticalmente */
+  gap: 10px; /* Espacio entre el checkbox y el texto */
+}
+
+.ingrediente-item input[type="checkbox"] {
+  margin-right: -98px;
+  transform: scale(1.2); /* Aumenta un poco el tamaño del checkbox */
+}
+
+.ingrediente-item label {
+  font-size: 1rem; /* Tamaño de la fuente del nombre del ingrediente */
+}
+
+/* Contenedor común para los botones Modificar y Eliminar */
+.producto-boton-container {
+  display: flex;
+  justify-content: space-between; /* Espacio igual entre los botones */
+  align-items: center; /* Alinea verticalmente los botones */
+  gap: 38px; /* Espacio entre los botones */
+  margin-top: 15px; /* Separación superior */
+}
+
+/* Estilo para los botones */
+.buttonModificar,
+.buttonEliminar {
+  padding: 11px 20px;
+  background-color: #de99a6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px; /* Ajusta el tamaño de fuente para consistencia */
+  margin-left: 12px;
+}
+
+.buttonModificar:hover,
+.buttonEliminar:hover {
+  background-color: #c78292; /* Color de fondo en hover */
+}
+
+.buttonModificar:active,
+.buttonEliminar:active {
+  transform: scale(0.95); /* Efecto de presionar el botón */
+}
+.buttonEliminar{
+  margin-right: 76px;
+
 }

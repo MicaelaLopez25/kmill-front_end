@@ -60,7 +60,8 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="email">Correo Electrónico</label>
-            <input
+            <input 
+            className="input2"
               type="email"
               id="email"
               placeholder="Ingrese su correo"
@@ -71,7 +72,8 @@ const Login = () => {
           </div>
           <div className="form-group">
             <label htmlFor="password">Contraseña</label>
-            <input
+            <input 
+            className="input2"
               type="password"
               id="password"
               placeholder="Ingrese su contraseña"

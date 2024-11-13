@@ -34,13 +34,13 @@ label {
   margin-bottom: 5px; /* Espacio inferior */
   color: #000000;
 }
-
-input {
-  width: 100%; /* Ancho completo */
-  padding: 10px; /* Espacio interno */
-  border: 1px solid #ccc; /* Borde gris claro */
-  border-radius: 4px; /* Bordes redondeados */
+.input2{
+  width: 107%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
+
 
 .btn-login {
   width: 107%; /* Botón de ancho completo */
