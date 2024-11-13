@@ -15,6 +15,8 @@ import Register from "./components/login-register/Register.jsx";
 import Cookieorder from "./components/MiniCart/Order.jsx";
 import UserRoles from "./components/login-register/Admin-Usu.jsx";
 import Cookieitems from "./components/Cookieitems.jsx";
+import OrderSummary from './components/MiniCart/OrderSummary';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -49,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: "/UserRoles",
     element: <UserRoles />,
+  },
+  {
+    path: "/order-summary", // Nueva ruta para OrderSummary
+    element: <OrderSummary />,
   },
 ]);
 

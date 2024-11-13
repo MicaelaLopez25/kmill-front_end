@@ -8,7 +8,7 @@ export function Post({
   titulo,
   rutaimg,
   description,
-  precio,
+  precio_producto,
   quantity,
   updateQuantity,
 }) {
@@ -30,7 +30,7 @@ export function Post({
       <div>
         <img className="imagencookie" src={rutaimg} alt={description} />
         <h2 className="h3cart">{titulo}</h2>
-        <h5 className="h3cart">${precio}</h5>
+        <h5 className="h3cart">${precio_producto}</h5>
         <div className="btns">
           <button className="btncart" onClick={handleDecrease}>
             <Minus className="w-4 h-4" />
