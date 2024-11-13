@@ -50,7 +50,7 @@ const Register = () => {
   };
 
   return (
-    <div className="centrar-container" >
+    <div className="centrar-containerR" >
       <div className="register-container" data-aos="zoom-in"   data-aos-duration="250">
         <button onClick={handleBackClick} className="back-button">
           Atras
@@ -58,9 +58,10 @@ const Register = () => {
 
         <h2>Crear Cuenta</h2>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
+          <div className="form-groupR">
             <label>Nombre de Usuario</label>
             <input
+            className="input"
               type="text"
               value={username}
               placeholder="Ingrese Nombre"
@@ -71,6 +72,8 @@ const Register = () => {
           <div className="form-group">
             <label>Apellido de Usuario</label>
             <input
+                        className="input"
+
               type="text"
               value={lastname} // Cambia username por lastname
               placeholder="Ingrese su Apellido"
@@ -81,6 +84,8 @@ const Register = () => {
           <div className="form-group">
             <label>Correo Electrónico</label>
             <input
+                        className="input"
+
               type="email"
               value={email}
               placeholder="Ingrese Correo Electronico"
@@ -91,6 +96,8 @@ const Register = () => {
           <div className="form-group">
             <label>Teléfono</label>
             <input
+                        className="input"
+
               type="text"
               value={telefono} // Cambia el nombre de la variable aquí
               placeholder="Ingrese su Teléfono"
@@ -101,6 +108,8 @@ const Register = () => {
           <div className="form-group">
             <label>Contraseña</label>
             <input
+              className="input"
+
               type="password"
               value={password}
               placeholder="Ingrese su contraseña"

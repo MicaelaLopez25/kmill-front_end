@@ -10,15 +10,40 @@ const Header = () => {
   
   // Estado para controlar la visibilidad del modal
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [ingredientes, setIngredientes] = useState([]);
+  const [ingredientesSeleccionados, setIngredientesSeleccionados] = useState([]);
 
   // Función para abrir el modal
   const openModal = () => {
     setIsModalOpen(true);
+    obtenerIngredientes();  // Cargar los ingredientes disponibles
   };
 
   // Función para cerrar el modal
   const closeModal = () => {
     setIsModalOpen(false);
+  };
+
+  const obtenerIngredientes = async () => {
+    try {
+      const response = await fetch("http://127.0.0.1:5000/ingredientes");
+      const data = await response.json();
+      console.log("Ingredientes obtenidos:", data);  // Verificar la respuesta
+      setIngredientes(data.ingredientes);  // Asume que el backend devuelve { ingredientes: [...] }
+    } catch (error) {
+      console.error("Error al obtener ingredientes:", error);
+    }
+  };
+  
+
+  // Función para manejar el cambio en los ingredientes seleccionados
+  const manejarIngredienteSeleccionado = (event) => {
+    const ingredienteId = event.target.value;
+    setIngredientesSeleccionados((prevSeleccionados) =>
+      prevSeleccionados.includes(ingredienteId)
+        ? prevSeleccionados.filter(id => id !== ingredienteId)  // Desmarcar
+        : [...prevSeleccionados, ingredienteId]  // Marcar
+    );
   };
 
   // Manejar el logout
@@ -38,8 +63,9 @@ const Header = () => {
     const id_categoria = event.target.id_categoria.value;
     const imagen = event.target.imagen.value;
 
+    
     try {
-      const response = await fetch("http://localhost:5000/producto/agregar", {
+      const response = await fetch("http://127.0.0.1:5000/producto/agregar", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,6 +76,7 @@ const Header = () => {
           precio,
           id_categoria,
           imagen,
+          ingredientes: ingredientesSeleccionados,  // Enviar los ingredientes seleccionados
         }),
       });
 
@@ -187,6 +214,24 @@ const Header = () => {
                     <label htmlFor="imagen">Imagen (URL)</label>
                     <input type="text" className="form-control" id="imagen" required />
                   </div>
+                  <div className="form-group espacio">
+  <label>Ingredientes</label>
+  <div className="ingredientes-list">
+    {ingredientes.map((ingrediente) => (
+      <div key={ingrediente.id} className="ingrediente-item">
+        <input
+          type="checkbox"
+          value={ingrediente.id}
+          onChange={manejarIngredienteSeleccionado}
+        />
+        <label>{ingrediente.Nombre}</label>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+
                   <button type="submit" className="btn btn-success">Agregar</button>
                 </form>
               </div>
